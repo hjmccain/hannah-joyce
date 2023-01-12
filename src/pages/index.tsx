@@ -10,7 +10,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main className="grid min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid-cols-3 md:grid-rows-3">
       <button
-        className="ml-12 mt-4 h-10 text-left text-orange-600 md:col-start-2 md:row-start-2 md:mb-36 md:ml-0 md:mt-0 md:h-full md:text-center md:text-7xl"
+        className="ml-12 mt-4 h-10 text-left text-orange-600 md:col-start-2 md:row-start-2 md:mt-[-6rem] md:ml-0 md:h-full md:text-center md:text-7xl"
         onClick={() => setShowNav(true)}>
         hannah joyce
       </button>
