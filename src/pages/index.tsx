@@ -17,20 +17,24 @@ const IndexPage: React.FC<PageProps> = () => {
     <main className="grid min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid-cols-3 md:grid-rows-3">
       <div
         className={classNames(
-          showAboutMe ? "h-[416px]" : "h-[144px]",
-          "flex w-fit flex-col overflow-hidden transition-all duration-300 md:col-start-2 md:row-span-2 md:row-start-2 md:mx-auto md:items-center md:rounded-3xl md:border-4 md:border-black md:bg-slate-100 md:p-6"
+          showAboutMe ? "md:h-[416px]" : "md:h-[144px]",
+          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-300 md:col-start-2 md:row-span-2 md:row-start-2 md:mx-auto md:items-center md:rounded-3xl md:border-4 md:border-black md:bg-slate-100 md:p-6"
         )}>
         <button
           className="m-12 my-4 h-10 text-left text-orange-600 md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
           onClick={() => setShowNav(true)}>
           hannah joyce
         </button>
-        {/* {showAboutMe && ( */}
         <div
           className={classNames(
-            showAboutMe ? "opacity-100" : "opacity-0",
-            "flex max-w-[400px] items-end transition-opacity md:mb-4"
+            showAboutMe
+              ? "bg-slate-100 p-10 text-sm opacity-100 md:p-0"
+              : "text-[0px] opacity-0",
+            "flex max-w-[400px] flex-col items-end transition-all md:m-0 md:mb-4"
           )}>
+          <button className="md:hidden" onClick={handleSetShowAboutMe}>
+            X
+          </button>
           <p className="text-justify md:text-2xl">
             is a software developer and poet who bleh blah blo blu blah ipsum
             dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor
@@ -39,9 +43,16 @@ const IndexPage: React.FC<PageProps> = () => {
             ea commodo consequat.
           </p>
         </div>
-        {/* )} */}
       </div>
-      {showNav && <Nav toggleAbout={handleSetShowAboutMe} />}
+      {showNav && (
+        <div
+          className={classNames(
+            showAboutMe ? "hidden md:flex" : "flex",
+            "flex items-end md:col-start-1 md:row-start-3 md:mb-16"
+          )}>
+          <Nav toggleAbout={handleSetShowAboutMe} />
+        </div>
+      )}
     </main>
   );
 };
