@@ -16,51 +16,30 @@ const IndexPage: React.FC<PageProps> = () => {
       </button>
       {showNav && (
         <div className="col-start-1 row-start-3 mb-16 grid grid-rows-3">
-          <nav className="group relative row-start-3 m-10 ml-10 h-fit content-end">
-            <button className="absolute z-30 col-start-1 row-start-3 rounded-full border-4 border-black bg-white py-10 px-8">
+          <nav className="nav group relative row-start-3 m-10 ml-10 h-fit content-end">
+            <button className="absolute z-30 col-start-1 row-start-3 rounded-full border-4 border-black bg-white py-10 px-8 opacity-100 duration-1000 group-hover:opacity-0">
               menu
             </button>
             <div className="opacity-0 group-hover:opacity-100">
               <button
                 className={classNames(
-                  "absolute z-20 col-start-1 row-start-3 w-28 origin-[54px_54px] rounded-full border-4 border-black bg-white py-10 duration-1000 group-hover:w-96 group-hover:-rotate-[65deg]"
-                )}>
-                gallery
-              </button>
-              <button
-                className={classNames(
-                  "absolute z-10 col-start-1 row-start-3 w-28 origin-[54px_54px] rounded-full border-4 border-black bg-white py-10 transition-all duration-1000 group-hover:w-96 group-hover:-rotate-[32deg]"
+                  "absolute z-20 col-start-1 row-start-3 w-28 origin-[56px_56px] rounded-full border-4 border-black bg-white py-10 group-hover:w-96 group-hover:-rotate-[65deg]"
                 )}>
                 about
               </button>
-              <button className="absolute col-start-1 row-start-3 w-28 origin-[54px_54px] rounded-full border-4 border-black bg-white py-10 duration-1000 group-hover:w-96">
+              <button
+                className={classNames(
+                  "absolute z-10 col-start-1 row-start-3 w-28 origin-[56px_56px] rounded-full border-4 border-black bg-white py-10 group-hover:w-96 group-hover:-rotate-[32deg]"
+                )}>
+                gallery
+              </button>
+              <button className="absolute col-start-1 row-start-3 w-28 origin-[56px_56px] rounded-full border-4 border-black bg-white py-10 duration-1000 group-hover:w-96">
                 contact
               </button>
             </div>
           </nav>
         </div>
       )}
-
-      {/* <div
-        onHover={() => {
-          setShowNavButton(false);
-          setShowNav(true);
-        }}
-        className={classNames(
-          "col-start-1 row-start-3",
-          showNavButton ? "block" : "hidden"
-        )}>
-        menu
-      </button>
-      <nav
-        className={classNames(
-          "col-start-1 row-start-3",
-          showNav ? "block" : "hidden"
-        )}>
-        <button>about</button>
-        <button>gallery</button>
-        <button>contact</button>
-      </nav> */}
     </main>
   );
 };
