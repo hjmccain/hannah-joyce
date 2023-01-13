@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Format_1452";
+  src: url("../assets/fonts/Format_1452.woff2");
+}
+
 .nav:hover button {
   transition-delay: 0ms, 200ms;
   transition-property: width, transform;

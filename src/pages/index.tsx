@@ -2,6 +2,7 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Nav from "./nav";
 import classNames from "classnames";
+import About from "./about";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showNav, setShowNav] = React.useState(false);
@@ -18,47 +19,27 @@ const IndexPage: React.FC<PageProps> = () => {
       <div
         className={classNames(
           showAboutMe ? "md:h-[446px]" : "md:h-[174px]",
-          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:row-start-2 md:mx-auto md:items-center md:rounded-[100px] md:border-4 md:border-black md:bg-slate-100 md:p-10 xl:col-start-2"
+          showNav ? "md:border-4 md:border-black md:bg-slate-100" : "",
+          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:row-start-2 md:mx-auto md:items-center md:rounded-[100px] md:p-10 xl:col-start-2"
         )}>
         <button
-          className="m-12 my-4 h-10 text-left text-orange-600 md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
+          className="m-12 my-4 h-10 text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
           onClick={() => setShowNav(true)}>
           hannah joyce
         </button>
-        <button
-          className={classNames(
-            showAboutMe
-              ? "text-[0px] opacity-0"
-              : "mt-[-.5rem] text-xl opacity-100",
-            "hidden self-center transition-opacity delay-200 md:block"
-          )}
-          onClick={handleSetShowAboutMe}>
-          ⌄
-        </button>
-
-        <div
-          className={classNames(
-            showAboutMe
-              ? "bg-slate-100 p-10 text-sm opacity-100 md:p-0"
-              : "text-[0px] opacity-0",
-            "flex flex-col items-end transition-all duration-300 md:m-0 md:w-[420px]"
-          )}>
-          <button className="md:hidden" onClick={handleSetShowAboutMe}>
-            X
-          </button>
-          <p className="text-justify md:text-2xl">
-            is a software developer and poet who bleh blah blo blu blah ipsum
-            dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </p>
+        {showNav && (
           <button
-            className="mt-4 hidden self-center text-xl md:block"
+            className={classNames(
+              showAboutMe
+                ? "text-[0px] opacity-0"
+                : "mt-[-.5rem] text-xl opacity-100",
+              "hidden self-center transition-opacity delay-200 md:block"
+            )}
             onClick={handleSetShowAboutMe}>
-            ^
+            ⌄
           </button>
-        </div>
+        )}
+        <About hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe} />
       </div>
       {showNav && (
         <div
