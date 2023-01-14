@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div
         className={classNames(
           showAboutMe || showContact
-            ? "md:mt-[-100px]"
+            ? "md:row-start-2 md:mt-[-100px]"
             : showPortfolio
             ? "mt-8 md:row-start-1"
             : "md:row-start-2",
@@ -47,10 +47,13 @@ const IndexPage: React.FC<PageProps> = () => {
         )}>
         <button
           className={classNames(
-            showNav ? "cursor-default" : "",
+            showNav && !showPortfolio ? "cursor-default" : "",
             "m-12 my-4 h-10 whitespace-nowrap text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
           )}
-          onClick={() => setShowNav(true)}>
+          onClick={() => {
+            setShowNav(true);
+            showPortfolio && setShowPortfolio(false);
+          }}>
           hannah joyce
         </button>
         {showAboutMe && (
