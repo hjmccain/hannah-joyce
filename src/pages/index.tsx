@@ -30,9 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
     setShowContact(false);
   };
 
-  // get screen size and set `showNav` to true below 768px
-
-  // if user hits esc while in portfolio mode, close portfolio
+  // todo: get screen size and set `showNav` to true below 768px
 
   console.log({ showNav });
 
@@ -40,14 +38,17 @@ const IndexPage: React.FC<PageProps> = () => {
     <main className="relative grid min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid-rows-3 xl:grid-cols-3">
       <div
         className={classNames(
-          showAboutMe || showContact ? "md:mt-[-100px]" : "md:mt-0",
-          showPortfolio ? "md:mt-[-420px]" : "md:mt-0",
-          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:row-start-2 md:mx-auto md:items-center md:rounded-[100px] md:p-10 xl:col-start-2"
+          showAboutMe || showContact
+            ? "md:mt-[-100px]"
+            : showPortfolio
+            ? "mt-8 md:row-start-1"
+            : "md:row-start-2",
+          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:mx-auto md:items-center md:rounded-[100px] md:p-10 xl:col-start-2"
         )}>
         <button
           className={classNames(
             showNav ? "cursor-default" : "",
-            "m-12 my-4 h-10 text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
+            "m-12 my-4 h-10 whitespace-nowrap text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
           )}
           onClick={() => setShowNav(true)}>
           hannah joyce
