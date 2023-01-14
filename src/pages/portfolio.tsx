@@ -117,34 +117,40 @@ const Portfolio: React.FC<PortfolioProps> = ({
           </div>
         </nav>
         {/* <div className="m-4 grid w-full grid-cols-[repeat(auto-fill,_minmax(vw,_1fr))] gap-1"> */}
-        <div className="m-px grid w-full grid-cols-4 gap-px">
+        <div className="m-px grid w-full grid-cols-1 gap-px lg:grid-cols-3 xl:grid-cols-4">
           <button
-            id="bassideDopeCobra"
+            id="inTheGarden"
             onClick={() =>
-              makeBig(isBig === "bassideDopeCobra" ? false : "bassideDopeCobra")
+              makeBig(isBig === "inTheGarden" ? false : "inTheGarden")
             }
             className={classNames(
-              isBig === "bassideDopeCobra"
-                ? "col-span-2"
-                : "col-span-1 row-span-1",
-              !posterSelected && "hidden",
+              isBig === "inTheGarden" ? "col-span-2" : "col-span-1 row-span-1",
+              !writingSelected && "hidden",
               "pulse flex flex-col justify-start bg-white p-4 text-left text-2xl transition-all duration-300"
             )}>
             <div
               className={classNames(
-                isBig === "bassideDopeCobra" ? "" : "",
-                "h-fit"
+                isBig === "inTheGarden" ? "h-[100rem]" : "m-0 h-96",
+                "overflow-scroll"
               )}>
               <StaticImage
-                src="../assets/portfolio/images/basside-dope-cobra.jpg"
+                src="../assets/portfolio/images/in-the-garden.jpg"
                 alt=""
               />
             </div>
             <div
               className={classNames(
-                isBig === "bassideDopeCobra" ? "m-4" : "m-0 mt-4"
+                isBig === "inTheGarden" ? "m-4" : "m-0 mt-4"
               )}>
-              Show flyer.
+              Poem about AI and God published in issue #3 of the{" "}
+              <a
+                className="text-blue-500 hover:text-blue-600"
+                href="https://www.tiltedhouse.org/the-review"
+                target="_blank"
+                rel="noopener noreferrer">
+                Tilted House Review
+              </a>
+              . The epitaph was written by GPT-2, using the poem as a prompt.
             </div>
           </button>
           <button
@@ -219,38 +225,32 @@ const Portfolio: React.FC<PortfolioProps> = ({
             </div>
           </button>
           <button
-            id="inTheGarden"
+            id="bassideDopeCobra"
             onClick={() =>
-              makeBig(isBig === "inTheGarden" ? false : "inTheGarden")
+              makeBig(isBig === "bassideDopeCobra" ? false : "bassideDopeCobra")
             }
             className={classNames(
-              isBig === "inTheGarden" ? "col-span-2" : "col-span-1 row-span-1",
-              !writingSelected && "hidden",
+              isBig === "bassideDopeCobra"
+                ? "col-span-2"
+                : "col-span-1 row-span-1",
+              !posterSelected && "hidden",
               "pulse flex flex-col justify-start bg-white p-4 text-left text-2xl transition-all duration-300"
             )}>
             <div
               className={classNames(
-                isBig === "inTheGarden" ? "h-[100rem]" : "m-0 h-96",
-                "overflow-scroll"
+                isBig === "bassideDopeCobra" ? "" : "",
+                "h-fit"
               )}>
               <StaticImage
-                src="../assets/portfolio/images/in-the-garden.jpg"
+                src="../assets/portfolio/images/basside-dope-cobra.jpg"
                 alt=""
               />
             </div>
             <div
               className={classNames(
-                isBig === "inTheGarden" ? "m-4" : "m-0 mt-4"
+                isBig === "bassideDopeCobra" ? "m-4" : "m-0 mt-4"
               )}>
-              Poem about AI and God published in issue #3 of the{" "}
-              <a
-                className="text-blue-500 hover:text-blue-600"
-                href="https://www.tiltedhouse.org/the-review"
-                target="_blank"
-                rel="noopener noreferrer">
-                Tilted House Review
-              </a>
-              . The epitaph was written by GPT-2, using the poem as a prompt.
+              Show flyer.
             </div>
           </button>
           <button
@@ -439,7 +439,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
               className={classNames(
                 isBig === "treasureMammal" ? "m-4" : "m-0 mt-4"
               )}>
-              Show flyer.
+              Show poster.
             </div>
           </button>
         </div>
