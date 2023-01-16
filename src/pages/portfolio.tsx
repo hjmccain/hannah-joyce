@@ -31,21 +31,23 @@ const Portfolio: React.FC<PortfolioProps> = ({
             : "left-[-5000px] hidden h-0 opacity-0",
           "absolute z-30 flex w-full flex-row border border-lilac-dark bg-lilac-dark"
         )}>
-        <nav className="min-h-[90vh] w-[18rem] p-4 text-4xl text-white">
+        <nav className="min-h-[90vh] w-[20rem] p-4 text-4xl text-white">
           <div className="sticky top-4 left-0">
             <h4 className="mb-4">FILTER</h4>
-            <div className="group">
+            <div className="group flex flex-row items-center">
               <button onClick={() => setPosterSelected(!posterSelected)}>
                 <span
                   className={classNames(
                     posterSelected ? "visible" : "invisible"
                   )}>
-                  <span className="font-dingbats">{"V "}</span>
+                  {"x "}
                 </span>
-                <span className="hover:underline">poster</span>
+                <span className="hover rounded-full border-2 border-lilac-light bg-lilac-muted-dark">
+                  poster
+                </span>
               </button>
               <button
-                className="ml-4 hidden text-base hover:underline group-hover:inline-block"
+                className="hover ml-4 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-base  group-hover:inline-block"
                 onClick={() => {
                   setPosterSelected(true);
                   setPaintingSelected(false);
@@ -54,18 +56,20 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 only
               </button>
             </div>
-            <div className="group">
+            <div className="group flex flex-row items-center">
               <button onClick={() => setPaintingSelected(!paintingSelected)}>
                 <span
                   className={classNames(
                     paintingSelected ? "visible" : "invisible"
                   )}>
-                  <span className="font-dingbats">{"V "}</span>
+                  {"x "}
                 </span>
-                <span className="hover:underline">painting</span>
+                <span className="hover rounded-full border-2 border-lilac-light bg-lilac-muted-dark">
+                  painting
+                </span>
               </button>
               <button
-                className="ml-4 hidden text-base hover:underline group-hover:inline-block"
+                className="hover ml-4 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-base  group-hover:inline-block"
                 onClick={() => {
                   setPosterSelected(false);
                   setPaintingSelected(true);
@@ -74,18 +78,20 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 only
               </button>
             </div>
-            <div className="group">
+            <div className="group flex flex-row items-center">
               <button onClick={() => setWritingSelected(!writingSelected)}>
                 <span
                   className={classNames(
                     writingSelected ? "visible" : "invisible"
                   )}>
-                  <span className="font-dingbats">{"V "}</span>
+                  {"x "}
                 </span>
-                <span className="hover:underline">writing</span>
+                <span className="hover rounded-full border-2 border-lilac-light bg-lilac-muted-dark">
+                  writing
+                </span>
               </button>
               <button
-                className="ml-4 hidden text-base hover:underline group-hover:inline-block"
+                className="hover ml-4 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-base  group-hover:inline-block"
                 onClick={() => {
                   setPosterSelected(false);
                   setPaintingSelected(false);

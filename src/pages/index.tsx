@@ -76,34 +76,39 @@ const IndexPage: React.FC<PageProps> = () => {
           </button>
           {showAboutMe && (
             <DetailView hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe}>
-              <p className="text-justify md:m-4 md:text-2xl">
-                is an artist, software engineer, and writer living in tucson,
-                az. Much of her work explores the edges, overlaps, and
+              <p className="text-justify md:m-4 md:text-xl">
+                is an artist, software engineer, and writer living in Tucson,
+                AZ. Much of her work explores the edges, overlaps, and
                 juxtapositions between the human and non-human, the “natural”
                 and “artificial.” She is equal parts luddite and cyborg
                 futurist. Get in touch if you need a frontend software
                 developer, want a poster designed, or wanna talk about GPT-3.
-                stay safe out there xo
+                Stay safe out there xo
               </p>
             </DetailView>
           )}
           {showForHire && (
             <DetailView hidden={!showForHire} toggleSelf={handleSetShowForHire}>
               <>
-                <p className="text-justify md:m-4 md:text-2xl">
+                <p className="text-justify md:m-4 md:text-xl">
                   is a senior full stack JavaScript / TypeScript developer with
                   particular expertise on the front end. She has over 5 years of
                   experience with React, is proficient with multiple CSS
                   libraries, and is comfortable dipping into the back end
                   whenever needed.
                 </p>
-                <p className="md:m-4 md:text-2xl">
-                  HIRE HANNAH FOR...
-                  <br /> - Coding & consulting
-                  <br /> - React projects
-                  <br /> - Frontend development projects
-                  <br /> - Visual design work
-                  <br /> - Portrait/painting commissions
+                <p className="text-center md:m-4 md:text-2xl">
+                  <span className="underline">HIRE HANNAH FOR</span>
+                  <br />
+                  Coding & consulting
+                  <br />
+                  React projects
+                  <br />
+                  Frontend development projects
+                  <br />
+                  Visual design work
+                  <br />
+                  Portrait/painting commissions
                 </p>
                 {/* <a href="../assets/hannah-mccain-resume-2023.pdf" download>
                   Download Hannah's resumé.
