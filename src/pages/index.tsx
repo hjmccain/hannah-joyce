@@ -45,11 +45,18 @@ const IndexPage: React.FC<PageProps> = () => {
 
   // todo: get screen size and set `showNav` to true below 768px
 
-  console.log({ showNav });
-
   return (
     <main className="bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark">
-      <div className="marquee w-full">
+      <div className="block md:hidden">
+        sorry, i haven't gotten around to making this website responsive. please
+        use a larger screen for the ~full experience~ ! if you want to get in
+        touch, use the links below <span className="font-dingbats">J</span>
+      </div>
+      <div
+        className={classNames(
+          showNav ? "visible" : "invisible",
+          "marquee w-full bg-black text-base"
+        )}>
         <div className="marquee__inner whitespace-nowrap" aria-hidden="true">
           <span className="w-[45rem] whitespace-nowrap text-center">
             this website is a work in progress{" "}

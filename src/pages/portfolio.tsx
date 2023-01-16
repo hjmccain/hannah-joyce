@@ -93,6 +93,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 }}>
                 only
               </button>
+            </div>
           </div>
         </nav>
         <div className="grid w-full grid-cols-1 gap-px bg-lilac-dark lg:grid-cols-3 xl:grid-cols-4">
