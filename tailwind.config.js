@@ -7,15 +7,19 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      display: ['Format_1452', 'sans-serif'],
-      sans: ['Neue Haas Grotesk', 'sans-serif']
+      dingbats: ['Mister Pixel'],
+      display: ['Dark Garden', 'sans-serif'],
+      sans: ['Neue Haas Grotesk', 'sans-serif'],
+      serif: ['Nimbus', 'serif']
     },
     colors: {
       'lilac': '#DFC8DC',
       'lilac-dark': '#B18AAD',
+      'lilac-muted-dark': '#C6AEC3',
       'lilac-light': '#EDE0EC',
       'lilac-extra-light': '#FBF8FB',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'black': '#000000'
     }
   },
   plugins: [],

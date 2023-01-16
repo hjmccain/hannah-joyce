@@ -29,9 +29,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
           !hidden
             ? "top-[200px] h-fit opacity-100"
             : "left-[-5000px] hidden h-0 opacity-0",
-          "bg-red-200 absolute z-30 flex w-full flex-row"
+          "absolute z-30 flex w-full flex-row border border-lilac-dark bg-lilac-dark"
         )}>
-        <nav className="min-h-[90vh] w-64 bg-lilac-extra-light p-4 text-4xl">
+        <nav className="min-h-[90vh] w-[18rem] p-4 text-4xl text-white">
           <div className="sticky top-4 left-0">
             <h4 className="mb-4">FILTER</h4>
             <div className="group">
@@ -40,7 +40,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   className={classNames(
                     posterSelected ? "visible" : "invisible"
                   )}>
-                  {"x "}
+                  <span className="font-dingbats">{"V "}</span>
                 </span>
                 <span className="hover:underline">poster</span>
               </button>
@@ -60,7 +60,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   className={classNames(
                     paintingSelected ? "visible" : "invisible"
                   )}>
-                  {"x "}
+                  <span className="font-dingbats">{"V "}</span>
                 </span>
                 <span className="hover:underline">painting</span>
               </button>
@@ -74,24 +74,13 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 only
               </button>
             </div>
-            {/* <button
-              
-              onClick={() => setPublishingSelected(!publishingSelected)}>
-              <span
-                className={classNames(
-                  publishingSelected ? "visible" : "invisible"
-                )}>
-                {"x "}
-              </span>
-              publishing
-            </button> */}
             <div className="group">
               <button onClick={() => setWritingSelected(!writingSelected)}>
                 <span
                   className={classNames(
                     writingSelected ? "visible" : "invisible"
                   )}>
-                  {"x "}
+                  <span className="font-dingbats">{"V "}</span>
                 </span>
                 <span className="hover:underline">writing</span>
               </button>
@@ -104,20 +93,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 }}>
                 only
               </button>
-            </div>
-            {/* <button
-              className="block"
-              onClick={() => setWebSelected(!webSelected)}>
-              <span
-                className={classNames(webSelected ? "visible" : "invisible")}>
-                {"x "}
-              </span>
-              web
-            </button> */}
           </div>
         </nav>
-        {/* <div className="m-4 grid w-full grid-cols-[repeat(auto-fill,_minmax(vw,_1fr))] gap-1"> */}
-        <div className="grid w-full grid-cols-1 gap-px border bg-lilac-dark font-sans lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid w-full grid-cols-1 gap-px bg-lilac-dark lg:grid-cols-3 xl:grid-cols-4">
           <button
             id="inTheGarden"
             onClick={() =>
@@ -443,7 +421,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
             </div>
           </button>
         </div>
-        <div className="hover sticky top-0 left-0 flex w-20 flex-col self-start pt-4 text-5xl">
+        <div className="hover sticky top-0 left-0 flex w-20 flex-col self-start pt-4 pb-1 text-5xl text-white">
           <button className="" onClick={toggleSelf}>
             X
           </button>
