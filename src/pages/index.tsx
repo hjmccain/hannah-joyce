@@ -146,7 +146,7 @@ const IndexPage: React.FC<PageProps> = () => {
               onClick={handleSetShowForHire}
               className={classNames(
                 makeRoomForText ? "animate-none" : "animate-bounce",
-                "hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white md:col-start-3 md:row-start-3"
+                "hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white md:col-start-1 md:row-start-3 lg:col-start-3"
               )}>
               FOR HIRE !!
             </button>
