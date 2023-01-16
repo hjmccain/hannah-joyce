@@ -60,7 +60,7 @@ const IndexPage: React.FC<PageProps> = () => {
         )}>
         <button
           className={classNames(
-            showNav && !showPortfolio ? "cursor-default" : "hover",
+            showNav && !showPortfolio ? "cursor-default" : "wavy",
             "m-12 my-4 h-10 whitespace-nowrap text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-[6rem]"
           )}
           onClick={() => {
