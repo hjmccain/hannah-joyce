@@ -78,33 +78,28 @@ const IndexPage: React.FC<PageProps> = () => {
           </button>
           {showAboutMe && (
             <DetailView hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe}>
-              <p className="text-justify md:m-4 md:text-xl">
-                is an artist, software engineer, and writer living in Tucson,
-                AZ. Much of her work explores the edges, overlaps, and
-                juxtapositions between the human and non-human, the “natural”
-                and “artificial.” She is equal parts luddite and cyborg
-                futurist. Get in touch{" "}
-                <span
-                  onClick={handleSetShowForHire}
-                  aria-role="button"
-                  className="hover cursor-pointer underline">
-                  if you need a frontend software developer
-                </span>
-                , want a poster designed, or wanna talk about GPT-3. Stay safe
-                out there xo
-              </p>
+              <>
+                <p className="text-justify text-black md:m-4 md:text-xl">
+                  is an artist, software engineer, and writer living in Tucson,
+                  AZ. Much of her work explores the edges, overlaps, and
+                  juxtapositions between the human and non-human, the “natural”
+                  and “artificial.” She is equal parts luddite and cyborg
+                  futurist. Get in touch{" "}
+                  <span
+                    onClick={handleSetShowForHire}
+                    aria-role="button"
+                    className="hover cursor-pointer underline">
+                    if you need a frontend software developer
+                  </span>
+                  , want a poster designed, or wanna talk about GPT-3 or poetry
+                  (or both!). Stay safe out there xo :)
+                </p>
+              </>
             </DetailView>
           )}
           {showForHire && (
             <DetailView hidden={!showForHire} toggleSelf={handleSetShowForHire}>
               <>
-                {/* <p className="pb-8 text-justify md:m-4 md:text-xl">
-                  is a senior full stack JavaScript / TypeScript developer with
-                  particular expertise on the front end. She has over 5 years of
-                  experience with React, is proficient with multiple CSS
-                  libraries, and is comfortable dipping into the back end
-                  whenever needed.
-                </p> */}
                 <a
                   className="hover mt-4 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
                   href={resume}
