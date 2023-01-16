@@ -1,5 +1,6 @@
 {
   "name": "pansy",
+  "homepage": "https://www.hannahjoyce.xyz/",
   "version": "1.0.0",
   "private": true,
   "description": "pansy",
@@ -12,7 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -31,6 +33,7 @@
     "@types/react-dom": "^18.0.10",
     "autoprefixer": "^10.4.13",
     "gatsby-plugin-postcss": "^6.4.0",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.2.1",

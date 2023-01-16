@@ -77,23 +77,38 @@ const IndexPage: React.FC<PageProps> = () => {
           {showAboutMe && (
             <DetailView hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe}>
               <p className="text-justify md:m-4 md:text-2xl">
-                is a software developer and poet who bleh blah blo blu blah
-                ipsum dolor sit amet, con sectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                is an artist, software engineer, and writer living in tucson,
+                az. Much of her work explores the edges, overlaps, and
+                juxtapositions between the human and non-human, the “natural”
+                and “artificial.” She is equal parts luddite and cyborg
+                futurist. Get in touch if you need a frontend software
+                developer, want a poster designed, or wanna talk about GPT-3.
+                stay safe out there xo
               </p>
             </DetailView>
           )}
           {showForHire && (
             <DetailView hidden={!showForHire} toggleSelf={handleSetShowForHire}>
-              <p className="text-justify md:m-4 md:text-2xl">
-                is for hire! hire me lol bleh blah blo blu blah ipsum dolor sit
-                amet, con sectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-              </p>
+              <>
+                <p className="text-justify md:m-4 md:text-2xl">
+                  is a senior full stack JavaScript / TypeScript developer with
+                  particular expertise on the front end. She has over 5 years of
+                  experience with React, is proficient with multiple CSS
+                  libraries, and is comfortable dipping into the back end
+                  whenever needed.
+                </p>
+                <p className="md:m-4 md:text-2xl">
+                  HIRE HANNAH FOR...
+                  <br /> - Coding & consulting
+                  <br /> - React projects
+                  <br /> - Frontend development projects
+                  <br /> - Visual design work
+                  <br /> - Portrait/painting commissions
+                </p>
+                {/* <a href="../assets/hannah-mccain-resume-2023.pdf" download>
+                  Download Hannah's resumé.
+                </a> */}
+              </>
             </DetailView>
           )}
           <DetailView hidden={!showContact} toggleSelf={handleSetShowContact}>
