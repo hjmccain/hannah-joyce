@@ -3,8 +3,9 @@ import type { HeadFC, PageProps } from "gatsby";
 import Nav from "./nav";
 import classNames from "classnames";
 import DetailView from "./detailView";
-import { StaticImage } from "gatsby-plugin-image";
 import Portfolio from "./portfolio";
+import MobilePlaceholder from "./mobilePlaceholder";
+import Marquee from "./marquee";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showNav, setShowNav] = React.useState(false);
@@ -47,52 +48,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <main className="bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark">
-      <div className="block md:hidden">
-        sorry, i haven't gotten around to making this website responsive. please
-        use a larger screen for the ~full experience~ ! if you want to get in
-        touch, use the links below <span className="font-dingbats">J</span>
-      </div>
-      <div
-        className={classNames(
-          showNav ? "visible" : "invisible",
-          "marquee w-full bg-black text-base"
-        )}>
-        <div className="marquee__inner whitespace-nowrap" aria-hidden="true">
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            this website is a work in progress{" "}
-            <span className="font-dingbats">J</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            but who among us is not a work in progress?{" "}
-            <span className="font-dingbats">V</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            this website is a work in progress{" "}
-            <span className="font-dingbats">J</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            but who among us is not a work in progress?{" "}
-            <span className="font-dingbats">V</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            this website is a work in progress{" "}
-            <span className="font-dingbats">J</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            but who among us is not a work in progress?{" "}
-            <span className="font-dingbats">V</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            this website is a work in progress{" "}
-            <span className="font-dingbats">J</span>
-          </span>
-          <span className="w-[45rem] whitespace-nowrap text-center">
-            but who among us is not a work in progress?{" "}
-            <span className="font-dingbats">V</span>
-          </span>
-        </div>
-      </div>
-      <div className="relative grid min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid-rows-3 xl:grid-cols-3">
+      <MobilePlaceholder />
+      <Marquee hideSelf={!showNav} />
+      <div className="relative hidden min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid md:grid-rows-3 xl:grid-cols-3">
         <div
           className={classNames(
             makeRoomForText
@@ -138,39 +96,37 @@ const IndexPage: React.FC<PageProps> = () => {
               </p>
             </DetailView>
           )}
-          {showContact && (
-            <DetailView hidden={!showContact} toggleSelf={handleSetShowContact}>
-              <nav className="mt-4 flex w-full flex-col text-3xl">
-                <li className="hover list-none text-center">
-                  <a href="mailto:hannahjmccain@gmail.com">email</a>
-                </li>
-                <li className="hover list-none text-center">
-                  <a
-                    href="https://www.instagram.com/imaginary_hannah/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    instagram
-                  </a>
-                </li>
-                <li className="hover list-none text-center">
-                  <a
-                    href="https://www.are.na/hannah-mccain"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    are.na
-                  </a>
-                </li>
-                <li className="hover list-none text-center">
-                  <a
-                    href="https://github.com/hjmccain"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    github
-                  </a>
-                </li>
-              </nav>
-            </DetailView>
-          )}
+          <DetailView hidden={!showContact} toggleSelf={handleSetShowContact}>
+            <nav className="mt-4 flex w-full flex-col text-3xl">
+              <li className="hover list-none text-center">
+                <a href="mailto:hannahjmccain@gmail.com">email</a>
+              </li>
+              <li className="hover list-none text-center">
+                <a
+                  href="https://www.instagram.com/imaginary_hannah/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  instagram
+                </a>
+              </li>
+              <li className="hover list-none text-center">
+                <a
+                  href="https://www.are.na/hannah-mccain"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  are.na
+                </a>
+              </li>
+              <li className="hover list-none text-center">
+                <a
+                  href="https://github.com/hjmccain"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  github
+                </a>
+              </li>
+            </nav>
+          </DetailView>
         </div>
         <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
         {showNav && (
@@ -178,7 +134,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <div
               className={classNames(
                 showAboutMe ? "hidden md:flex" : "flex",
-                "flex items-end md:col-start-1 md:row-start-3 md:mb-24"
+                "hidden items-end md:col-start-1 md:row-start-3 md:mb-24 md:flex"
               )}>
               <Nav
                 toggleAbout={handleSetShowAboutMe}
@@ -188,7 +144,10 @@ const IndexPage: React.FC<PageProps> = () => {
             </div>
             <button
               onClick={handleSetShowForHire}
-              className="hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white md:col-start-3 md:row-start-3">
+              className={classNames(
+                makeRoomForText ? "animate-none" : "animate-bounce",
+                "hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white md:col-start-3 md:row-start-3"
+              )}>
               FOR HIRE !!
             </button>
           </>
