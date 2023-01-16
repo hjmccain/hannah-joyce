@@ -67,7 +67,17 @@ const IndexPage: React.FC<PageProps> = () => {
             setShowNav(true);
             showPortfolio && setShowPortfolio(false);
           }}>
-          hannah joyce
+          <span className="timing-1">h</span>
+          <span className="timing-2">a</span>
+          <span className="timing-3">n</span>
+          <span className="timing-4">n</span>
+          <span className="timing-5">a</span>
+          <span className="timing-6 mr-6">h</span>
+          <span className="timing-7">j</span>
+          <span className="timing-8">o</span>
+          <span className="timing-9">y</span>
+          <span className="timing-10">c</span>
+          <span className="timing-11">e</span>
         </button>
         {showAboutMe && (
           <DetailView hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe}>

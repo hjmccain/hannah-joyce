@@ -34,6 +34,70 @@
   animation: hover 2s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
+.wavy {
+  position: relative;
+}
+
+.wavy:hover span {
+  position: relative;
+  display: inline-block;
+  /* color: #fff; */
+  /* font-size: 2em; */
+  /* text-transform: uppercase; */
+  animation: animate 2s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.timing-1 {
+  --i: 1;
+}
+.timing-2 {
+  --i: 2;
+}
+.timing-3 {
+  --i: 3;
+}
+.timing-4 {
+  --i: 4;
+}
+.timing-5 {
+  --i: 5;
+}
+.timing-6 {
+  --i: 6;
+}
+.timing-7 {
+  --i: 7;
+}
+.timing-8 {
+  --i: 8;
+}
+.timing-9 {
+  --i: 9;
+}
+.timing-10 {
+  --i: 10;
+}
+.timing-11 {
+  --i: 11;
+}
+.timing-12 {
+  --i: 12;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 @keyframes pulse {
   0%,
   100% {
