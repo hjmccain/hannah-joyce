@@ -23,7 +23,7 @@ const DetailView: React.FC<DetailViewProps> = ({
       </button>
       {children}
       <button
-        className="mt-4 hidden self-center text-xl md:block"
+        className="hover mt-4 hidden self-center text-4xl md:block"
         onClick={toggleSelf}>
         X
       </button>

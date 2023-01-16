@@ -7,6 +7,11 @@
   src: url("../assets/fonts/Format_1452.woff2");
 }
 
+@font-face {
+  font-family: "Neue Haas Grotesk";
+  src: url("../assets/fonts/Helvetica.woff2");
+}
+
 .nav-transition:hover button {
   transition-delay: 0ms, 200ms;
   transition-property: width, transform;
@@ -25,6 +30,10 @@
   animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
+.hover:hover {
+  animation: hover 2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -32,5 +41,20 @@
   }
   50% {
     opacity: 0.8;
+  }
+}
+
+@keyframes hover {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.5;
   }
 }

@@ -18,7 +18,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
   // const [webSelected, setWebSelected] = React.useState(true);
   const [isBig, makeBig] = React.useState<false | string>(false);
 
-  // todo: in order to get rid of "display:nonw" and use css transitions,
+  // todo: in order to get rid of "display:none" and use css transitions,
   // need to recalculate the screen height when portfolio is hidden
   // so that the scroll bar goes away.
 
@@ -29,9 +29,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
           !hidden
             ? "top-[200px] h-fit opacity-100"
             : "left-[-5000px] hidden h-0 opacity-0",
-          "absolute z-30 flex w-full flex-row bg-red-200"
+          "bg-red-200 absolute z-30 flex w-full flex-row"
         )}>
-        <nav className="min-h-[90vh] w-64 bg-red-300 p-4">
+        <nav className="min-h-[90vh] w-64 bg-lilac-extra-light p-4 text-4xl">
           <div className="sticky top-4 left-0">
             <h4 className="mb-4">FILTER</h4>
             <div className="group">
@@ -42,10 +42,10 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   )}>
                   {"x "}
                 </span>
-                <span className="hover:text-black/50">poster</span>
+                <span className="hover:underline">poster</span>
               </button>
               <button
-                className="ml-4 hidden text-base hover:text-black/50 group-hover:inline-block"
+                className="ml-4 hidden text-base hover:underline group-hover:inline-block"
                 onClick={() => {
                   setPosterSelected(true);
                   setPaintingSelected(false);
@@ -62,10 +62,10 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   )}>
                   {"x "}
                 </span>
-                <span className="hover:text-black/50">painting</span>
+                <span className="hover:underline">painting</span>
               </button>
               <button
-                className="ml-4 hidden text-base hover:text-black/50 group-hover:inline-block"
+                className="ml-4 hidden text-base hover:underline group-hover:inline-block"
                 onClick={() => {
                   setPosterSelected(false);
                   setPaintingSelected(true);
@@ -93,10 +93,10 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   )}>
                   {"x "}
                 </span>
-                <span className="hover:text-black/50">writing</span>
+                <span className="hover:underline">writing</span>
               </button>
               <button
-                className="ml-4 hidden text-base hover:text-black/50 group-hover:inline-block"
+                className="ml-4 hidden text-base hover:underline group-hover:inline-block"
                 onClick={() => {
                   setPosterSelected(false);
                   setPaintingSelected(false);
@@ -117,7 +117,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
           </div>
         </nav>
         {/* <div className="m-4 grid w-full grid-cols-[repeat(auto-fill,_minmax(vw,_1fr))] gap-1"> */}
-        <div className="m-px grid w-full grid-cols-1 gap-px lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid w-full grid-cols-1 gap-px border bg-lilac-dark font-sans lg:grid-cols-3 xl:grid-cols-4">
           <button
             id="inTheGarden"
             onClick={() =>
@@ -443,7 +443,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
             </div>
           </button>
         </div>
-        <div className="sticky top-0 left-0 flex w-12 flex-col self-start pt-4">
+        <div className="hover sticky top-0 left-0 flex w-20 flex-col self-start pt-4 text-5xl">
           <button className="" onClick={toggleSelf}>
             X
           </button>

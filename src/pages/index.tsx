@@ -11,23 +11,36 @@ const IndexPage: React.FC<PageProps> = () => {
   const [showAboutMe, setShowAboutMe] = React.useState(false);
   const [showContact, setShowContact] = React.useState(false);
   const [showPortfolio, setShowPortfolio] = React.useState(false);
+  const [showForHire, setShowForHire] = React.useState(false);
+
+  const makeRoomForText = showAboutMe || showContact || showForHire;
 
   const handleSetShowAboutMe = () => {
     setShowAboutMe(!showAboutMe);
     setShowContact(false);
     setShowPortfolio(false);
+    setShowForHire(false);
   };
 
   const handleSetShowContact = () => {
     setShowContact(!showContact);
     setShowAboutMe(false);
     setShowPortfolio(false);
+    setShowForHire(false);
   };
 
   const handleTogglePortfolio = () => {
     setShowPortfolio(!showPortfolio);
     setShowAboutMe(false);
     setShowContact(false);
+    setShowForHire(false);
+  };
+
+  const handleSetShowForHire = () => {
+    setShowPortfolio(false);
+    setShowAboutMe(false);
+    setShowContact(false);
+    setShowForHire(!showForHire);
   };
 
   // todo: get screen size and set `showNav` to true below 768px
@@ -35,20 +48,20 @@ const IndexPage: React.FC<PageProps> = () => {
   console.log({ showNav });
 
   return (
-    <main className="relative grid min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid-rows-3 xl:grid-cols-3">
+    <main className="relative grid min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 bg-lilac-extra-light font-display text-lilac-dark md:grid-rows-3 xl:grid-cols-3">
       <div
         className={classNames(
-          showAboutMe || showContact
+          makeRoomForText
             ? "md:row-start-2 md:mt-[-100px]"
             : showPortfolio
-            ? "mt-8 md:row-start-1"
+            ? "mt-10 md:row-start-1"
             : "md:row-start-2",
-          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:mx-auto md:items-center md:rounded-[100px] md:p-10 xl:col-start-2"
+          "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:mx-auto md:items-center md:p-10 xl:col-start-2"
         )}>
         <button
           className={classNames(
-            showNav && !showPortfolio ? "cursor-default" : "",
-            "m-12 my-4 h-10 whitespace-nowrap text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-7xl"
+            showNav && !showPortfolio ? "cursor-default" : "hover",
+            "m-12 my-4 h-10 whitespace-nowrap text-left md:m-0 md:mb-4 md:h-auto md:text-center md:text-[6rem]"
           )}
           onClick={() => {
             setShowNav(true);
@@ -58,7 +71,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </button>
         {showAboutMe && (
           <DetailView hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe}>
-            <p className="text-justify md:m-[.9rem] md:text-2xl">
+            <p className="text-justify font-sans md:m-[.9rem] md:text-2xl">
               is a software developer and poet who bleh blah blo blu blah ipsum
               dolor sit amet, con sectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -67,13 +80,24 @@ const IndexPage: React.FC<PageProps> = () => {
             </p>
           </DetailView>
         )}
+        {showForHire && (
+          <DetailView hidden={!showForHire} toggleSelf={handleSetShowForHire}>
+            <p className="text-justify font-sans md:m-[.9rem] md:text-2xl">
+              is for hire! hire me lol bleh blah blo blu blah ipsum dolor sit
+              amet, con sectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat.
+            </p>
+          </DetailView>
+        )}
         {showContact && (
           <DetailView hidden={!showContact} toggleSelf={handleSetShowContact}>
-            <nav className="flex w-full flex-col">
-              <li className="list-none text-center text-2xl">
+            <nav className="flex w-full flex-col text-3xl">
+              <li className="hover list-none text-center">
                 <a href="mailto:hannahjmccain@gmail.com">email</a>
               </li>
-              <li className="list-none text-center text-2xl">
+              <li className="hover list-none text-center">
                 <a
                   href="https://www.instagram.com/imaginary_hannah/"
                   target="_blank"
@@ -81,7 +105,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   instagram
                 </a>
               </li>
-              <li className="list-none text-center text-2xl">
+              <li className="hover list-none text-center">
                 <a
                   href="https://www.are.na/hannah-mccain"
                   target="_blank"
@@ -89,7 +113,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   are.na
                 </a>
               </li>
-              <li className="list-none text-center text-2xl">
+              <li className="hover list-none text-center">
                 <a
                   href="https://github.com/hjmccain"
                   target="_blank"
@@ -103,17 +127,24 @@ const IndexPage: React.FC<PageProps> = () => {
       </div>
       <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
       {showNav && (
-        <div
-          className={classNames(
-            showAboutMe ? "hidden md:flex" : "flex",
-            "flex items-end md:col-start-1 md:row-start-3 md:mb-16"
-          )}>
-          <Nav
-            toggleAbout={handleSetShowAboutMe}
-            toggleContact={handleSetShowContact}
-            togglePortfolio={handleTogglePortfolio}
-          />
-        </div>
+        <>
+          <div
+            className={classNames(
+              showAboutMe ? "hidden md:flex" : "flex",
+              "flex items-end md:col-start-1 md:row-start-3 md:mb-16"
+            )}>
+            <Nav
+              toggleAbout={handleSetShowAboutMe}
+              toggleContact={handleSetShowContact}
+              togglePortfolio={handleTogglePortfolio}
+            />
+          </div>
+          <button
+            onClick={handleSetShowForHire}
+            className="hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border border-lilac-dark bg-lilac px-4 py-2 text-right font-sans text-3xl text-white md:col-start-3 md:row-start-3">
+            FOR HIRE
+          </button>
+        </>
       )}
     </main>
   );
