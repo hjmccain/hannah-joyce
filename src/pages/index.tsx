@@ -6,6 +6,8 @@ import DetailView from "./detailView";
 import Portfolio from "./portfolio";
 import MobilePlaceholder from "./mobilePlaceholder";
 import Marquee from "./marquee";
+// @ts-ignore
+import resume from "../assets/hannah-mccain-resume-2023.pdf";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showNav, setShowNav] = React.useState(false);
@@ -81,23 +83,35 @@ const IndexPage: React.FC<PageProps> = () => {
                 AZ. Much of her work explores the edges, overlaps, and
                 juxtapositions between the human and non-human, the “natural”
                 and “artificial.” She is equal parts luddite and cyborg
-                futurist. Get in touch if you need a frontend software
-                developer, want a poster designed, or wanna talk about GPT-3.
-                Stay safe out there xo
+                futurist. Get in touch{" "}
+                <span
+                  onClick={handleSetShowForHire}
+                  aria-role="button"
+                  className="hover cursor-pointer underline">
+                  if you need a frontend software developer
+                </span>
+                , want a poster designed, or wanna talk about GPT-3. Stay safe
+                out there xo
               </p>
             </DetailView>
           )}
           {showForHire && (
             <DetailView hidden={!showForHire} toggleSelf={handleSetShowForHire}>
               <>
-                <p className="text-justify md:m-4 md:text-xl">
+                {/* <p className="pb-8 text-justify md:m-4 md:text-xl">
                   is a senior full stack JavaScript / TypeScript developer with
                   particular expertise on the front end. She has over 5 years of
                   experience with React, is proficient with multiple CSS
                   libraries, and is comfortable dipping into the back end
                   whenever needed.
-                </p>
-                <p className="text-center md:m-4 md:text-2xl">
+                </p> */}
+                <a
+                  className="hover mt-4 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
+                  href={resume}
+                  download>
+                  &gt;&gt; Download Hannah's resumé. &lt;&lt;
+                </a>
+                <p className="bg-lilac-light py-8 text-center text-lilac-dark md:m-4 md:text-xl">
                   <span className="underline">HIRE HANNAH FOR</span>
                   <br />
                   Coding & consulting
@@ -110,9 +124,11 @@ const IndexPage: React.FC<PageProps> = () => {
                   <br />
                   Portrait/painting commissions
                 </p>
-                {/* <a href="../assets/hannah-mccain-resume-2023.pdf" download>
-                  Download Hannah's resumé.
-                </a> */}
+                <button
+                  className="hover self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
+                  onClick={handleSetShowContact}>
+                  Get in touch!
+                </button>
               </>
             </DetailView>
           )}
@@ -166,7 +182,7 @@ const IndexPage: React.FC<PageProps> = () => {
               onClick={handleSetShowForHire}
               className={classNames(
                 makeRoomForText ? "animate-none" : "animate-bounce",
-                "hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white md:col-start-1 md:row-start-3 lg:col-start-3"
+                "hover mr-20 mb-16 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white motion-reduce:animate-none md:col-start-1 md:row-start-3 lg:col-start-3"
               )}>
               FOR HIRE !!
             </button>

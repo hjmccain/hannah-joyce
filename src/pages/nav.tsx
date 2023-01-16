@@ -38,8 +38,8 @@ const Nav: React.FC<NavProps> = ({
         </button>
         <button
           onClick={toggleContact}
-          className="absolute bottom-[-66px] ml-10 w-40 origin-[40px_40px] rounded-full border-2 border-lilac-dark bg-black py-6 text-xl duration-1000 hover:bg-lilac-light group-hover:w-72 md:ml-0 md:origin-[82px_82px] md:py-14 md:text-5xl md:group-hover:w-[32rem]">
-          <span className="pl-32 uppercase opacity-0 transition-opacity delay-100 group-hover:opacity-100">
+          className="absolute bottom-[-66px] ml-10 w-40 origin-[40px_40px] rounded-full border-2 border-lilac-dark bg-black py-6 text-right text-xl duration-1000 hover:bg-lilac-light group-hover:w-72 md:ml-0 md:origin-[82px_82px] md:py-14 md:text-5xl md:group-hover:w-[32rem]">
+          <span className="mr-12 pl-32 uppercase opacity-0 transition-opacity delay-100 group-hover:opacity-100">
             contact
           </span>
         </button>
