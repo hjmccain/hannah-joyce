@@ -186,11 +186,11 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
         <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
         {showNav && (
-          <div className="sticky bottom-0 flex h-fit w-full justify-between self-end md:col-span-3 md:col-start-1 md:row-start-3">
+          <div className="sticky bottom-16 mb-16 flex h-0 w-full justify-between self-end md:col-span-3 md:col-start-1 md:row-start-3">
             <div
               className={classNames(
                 showAboutMe ? "hidden md:flex" : "flex",
-                "mb-16 hidden items-end md:flex"
+                "hidden items-end md:flex"
               )}>
               <Nav
                 toggleAbout={handleSetShowAboutMe}
@@ -202,7 +202,7 @@ const IndexPage: React.FC<PageProps> = () => {
               onClick={handleSetShowForHire}
               className={classNames(
                 makeRoomForText ? "animate-none" : "animate-bounce",
-                "hover mr-20 mb-8 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white motion-reduce:animate-none"
+                "hover mr-20 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white motion-reduce:animate-none"
               )}>
               FOR HIRE !!
             </button>
