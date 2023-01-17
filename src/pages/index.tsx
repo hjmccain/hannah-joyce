@@ -18,6 +18,24 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const makeRoomForText = showAboutMe || showContact || showForHire;
 
+  React.useEffect(() => {
+    const id = showContact
+      ? "contact"
+      : showForHire
+      ? "hire"
+      : showAboutMe
+      ? "about"
+      : null;
+    const el = id && document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  }, [makeRoomForText]);
+
   const handleSetShowAboutMe = () => {
     setShowAboutMe(!showAboutMe);
     setShowContact(false);
@@ -45,8 +63,6 @@ const IndexPage: React.FC<PageProps> = () => {
     setShowContact(false);
     setShowForHire(!showForHire);
   };
-
-  // todo: get screen size and set `showNav` to true below 768px
 
   return (
     <main className="bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark">
@@ -77,7 +93,10 @@ const IndexPage: React.FC<PageProps> = () => {
             hannah joyce
           </button>
           {showAboutMe && (
-            <DetailView hidden={!showAboutMe} toggleSelf={handleSetShowAboutMe}>
+            <DetailView
+              id="about"
+              hidden={!showAboutMe}
+              toggleSelf={handleSetShowAboutMe}>
               <>
                 <p className="text-justify text-black md:m-4 md:text-xl">
                   is an artist, software engineer, and writer living in Tucson,
@@ -98,7 +117,10 @@ const IndexPage: React.FC<PageProps> = () => {
             </DetailView>
           )}
           {showForHire && (
-            <DetailView hidden={!showForHire} toggleSelf={handleSetShowForHire}>
+            <DetailView
+              id="hire"
+              hidden={!showForHire}
+              toggleSelf={handleSetShowForHire}>
               <>
                 <a
                   className="hover mt-4 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
@@ -127,7 +149,10 @@ const IndexPage: React.FC<PageProps> = () => {
               </>
             </DetailView>
           )}
-          <DetailView hidden={!showContact} toggleSelf={handleSetShowContact}>
+          <DetailView
+            id="contact"
+            hidden={!showContact}
+            toggleSelf={handleSetShowContact}>
             <nav className="mt-4 flex w-full flex-col text-3xl">
               <li className="hover list-none text-center">
                 <a href="mailto:hannahjmccain@gmail.com">email</a>
