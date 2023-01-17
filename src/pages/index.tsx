@@ -68,7 +68,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <main className="bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark">
       <MobilePlaceholder />
       <Marquee hideSelf={!showNav} />
-      <div className="relative hidden min-h-screen grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid md:grid-rows-3 xl:grid-cols-3">
+      <div className="relative hidden min-h-screen grid-cols-1 grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid md:grid-rows-3 xl:grid-cols-3">
         <div
           className={classNames(
             makeRoomForText
@@ -186,7 +186,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
         <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
         {showNav && (
-          <div className="sticky bottom-16 mb-16 flex h-0 w-full justify-between self-end md:col-span-3 md:col-start-1 md:row-start-3">
+          <div className="sticky bottom-16 mb-16 flex h-0 w-full justify-between self-end md:col-span-1 md:col-start-1 md:row-start-3 lg:col-span-3 lg:col-start-1">
             <div
               className={classNames(
                 showAboutMe ? "hidden md:flex" : "flex",
