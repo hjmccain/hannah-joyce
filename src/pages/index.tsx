@@ -87,7 +87,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   futurist. Get in touch{" "}
                   <span
                     onClick={handleSetShowForHire}
-                    aria-role="button"
+                    role="button"
                     className="hover cursor-pointer underline">
                     if you need a frontend software developer
                   </span>
