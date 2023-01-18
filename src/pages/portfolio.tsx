@@ -23,7 +23,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
   // so that the scroll bar goes away.
 
   return (
-    <div className="portfolio-transition text-3xl">
+    <div className="portfolio-transition col-start-1 text-3xl">
       <div
         className={classNames(
           !hidden

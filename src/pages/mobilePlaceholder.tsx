@@ -4,14 +4,14 @@ import DetailView from "./detailView";
 const MobilePlaceholder = () => {
   return (
     <div className="block h-screen md:hidden">
-      sorry, i haven't gotten around to making this website responsive. please
-      use a larger screen for the ~full experience~ ! if you want to get in
-      touch with me (hannah), you can use the links below{" "}
+      sorry, i haven't gotten around to making this website fully responsive.
+      please use a larger screen (ipad or bigger) for the ~full experience~ ! if
+      you want to get in touch with me (hannah), you can use the links below{" "}
       <span className="font-dingbats">J</span>
       <br />
       <br />
       <br />
-      <DetailView hidden={false} toggleSelf={() => null}>
+      <DetailView id="mobile-contact" hidden={false} toggleSelf={() => null}>
         <nav className="mt-4 flex w-full flex-col text-3xl">
           <li className="hover list-none text-center">
             <a href="mailto:hannahjmccain@gmail.com">email</a>
