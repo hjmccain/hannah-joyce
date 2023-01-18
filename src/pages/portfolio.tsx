@@ -31,7 +31,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
             : "left-[-5000px] hidden h-0 opacity-0",
           "absolute z-30 flex w-full flex-row border border-lilac-dark bg-lilac-dark"
         )}>
-        <nav className="min-h-[90vh] w-[20rem] p-4 text-4xl text-white">
+        <nav className="min-h-[90vh] w-[20rem] p-4 text-3xl text-white xl:text-4xl">
           <div className="sticky top-4 left-0">
             <h4 className="mb-4">FILTER</h4>
             <div className="group flex flex-row items-center">
@@ -47,7 +47,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 </span>
               </button>
               <button
-                className="hover ml-4 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-base  group-hover:inline-block"
+                className="hover ml-2 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-sm group-hover:inline-block xl:ml-4 xl:text-base"
                 onClick={() => {
                   setPosterSelected(true);
                   setPaintingSelected(false);
@@ -69,7 +69,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 </span>
               </button>
               <button
-                className="hover ml-4 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-base  group-hover:inline-block"
+                className="hover ml-2 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-sm group-hover:inline-block xl:ml-4 xl:text-base"
                 onClick={() => {
                   setPosterSelected(false);
                   setPaintingSelected(true);
@@ -91,7 +91,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 </span>
               </button>
               <button
-                className="hover ml-4 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-base  group-hover:inline-block"
+                className="hover ml-2 mt-[2px] hidden h-fit rounded-full border-2 border-lilac-light bg-lilac-muted-dark py-px px-2 text-sm group-hover:inline-block xl:ml-4 xl:text-base"
                 onClick={() => {
                   setPosterSelected(false);
                   setPaintingSelected(false);
