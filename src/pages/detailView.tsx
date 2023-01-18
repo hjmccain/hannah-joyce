@@ -17,10 +17,15 @@ const DetailView: React.FC<DetailViewProps> = ({
   return (
     <div
       className={classNames(
-        hidden ? "text-[0px] opacity-0" : "p-10 text-sm opacity-100 md:p-0",
+        hidden ? "text-[0px] opacity-0" : "p-2 pb-4 text-sm opacity-100 md:p-0",
         "detail-view flex scroll-mt-4 flex-col bg-white md:m-0 md:w-[550px]"
       )}>
-      <button className="md:hidden" onClick={toggleSelf}>
+      <button
+        className={classNames(
+          id === "about" ? "" : "mb-[-2rem]",
+          "text-right text-xl md:hidden"
+        )}
+        onClick={toggleSelf}>
         X
       </button>
       {children}

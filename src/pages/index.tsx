@@ -104,7 +104,7 @@ const IndexPage: React.FC<PageProps> = () => {
               hidden={!showAboutMe}
               toggleSelf={handleSetShowAboutMe}>
               <>
-                <p className="text-justify text-black md:m-4 md:text-xl">
+                <p className="text-justify text-lg text-black md:m-4 md:text-xl">
                   is an artist, software engineer, and writer living in Tucson,
                   AZ. Much of her work explores the edges, overlaps, and
                   juxtapositions between the human and non-human, the “natural”
@@ -134,7 +134,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   download>
                   &gt;&gt; Download Hannah's resumé. &lt;&lt;
                 </a>
-                <p className="bg-lilac-light py-8 text-center text-lilac-dark md:m-4 md:text-xl">
+                <p className="m-4 bg-lilac-light py-8 text-center text-lilac-dark md:text-xl">
                   <span className="underline">HIRE HANNAH FOR</span>
                   <br />
                   Coding & consulting
