@@ -4,7 +4,7 @@ import Nav from "./nav";
 import classNames from "classnames";
 import DetailView from "./detailView";
 import Portfolio from "./portfolio";
-import MobilePlaceholder from "./mobilePlaceholder";
+// import MobilePlaceholder from "./mobilePlaceholder";
 import Marquee from "./marquee";
 // @ts-ignore
 import resume from "../assets/hannah-mccain-resume-2023.pdf";
@@ -36,6 +36,13 @@ const IndexPage: React.FC<PageProps> = () => {
     }
   }, [makeRoomForText]);
 
+  React.useEffect(() => {
+    const w = screen.width;
+    if (w < 768) {
+      setShowNav(true);
+    }
+  }, []);
+
   const handleSetShowAboutMe = () => {
     setShowAboutMe(!showAboutMe);
     setShowContact(false);
@@ -66,25 +73,24 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <main className="bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark">
-      <MobilePlaceholder />
       <Marquee hideSelf={!showNav} />
-      <div className="relative hidden min-h-screen grid-cols-1 grid-rows-[repeat(3,_fit-content(100px))] gap-4 md:grid md:grid-rows-3 xl:grid-cols-3">
+      <div className="relative flex min-h-screen flex-col items-center justify-between md:grid md:grid-cols-1 md:grid-rows-3 md:items-start md:gap-4 xl:grid-cols-3">
         <div
           className={classNames(
             makeRoomForText
               ? "md:row-start-2 md:mt-[-100px]"
               : showPortfolio
-              ? "mt-[-1.5rem] md:row-start-1"
+              ? "md:row-start-1 md:mt-[-1.5rem]"
               : "md:row-start-2",
             "justify-self-center",
-            "detail-view-transition flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:items-center md:p-10 xl:col-start-2"
+            "detail-view-transition flex h-fit w-full flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:w-fit md:items-center md:p-10 xl:col-start-2"
           )}>
           <button
             className={classNames(
               showNav && !showPortfolio
                 ? "cursor-default border-lilac bg-black text-lilac-muted-dark"
                 : "hover bg-lilac-dark text-lilac-light",
-              "m-12 my-4 h-10 whitespace-nowrap rounded-full border-2  px-10 text-left font-display transition-all duration-700 md:m-0 md:mb-4 md:h-auto md:text-center md:text-[6rem]"
+              "h-40 w-full px-10 text-center font-display text-6xl transition-all duration-700 md:m-0 md:my-4 md:mb-4 md:h-36 md:w-auto md:whitespace-nowrap md:rounded-full md:border-2 md:text-[6rem]"
             )}
             onClick={() => {
               setShowNav(true);
@@ -188,12 +194,8 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
         <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
         {showNav && (
-          <div className="sticky bottom-16 mb-16 flex h-0 w-full justify-between self-end md:col-span-1 md:col-start-1 md:row-start-3 lg:col-span-3 lg:col-start-1">
-            <div
-              className={classNames(
-                showAboutMe ? "hidden md:flex" : "flex",
-                "hidden items-end md:flex"
-              )}>
+          <div className="flex h-full flex-col md:sticky md:bottom-16 md:col-span-1 md:col-start-1 md:row-start-3 md:mb-16 md:flex md:h-0 md:w-full md:flex-row md:justify-between md:self-end lg:col-span-3 lg:col-start-1">
+            <div className={classNames("flex items-end")}>
               <Nav
                 toggleAbout={handleSetShowAboutMe}
                 toggleContact={handleSetShowContact}
@@ -203,8 +205,8 @@ const IndexPage: React.FC<PageProps> = () => {
             <button
               onClick={handleSetShowForHire}
               className={classNames(
-                makeRoomForText ? "animate-none" : "animate-bounce",
-                "hover mr-20 w-fit self-end justify-self-end rounded-full border-2 border-lilac bg-black px-4 pb-2 pt-3 text-right text-3xl text-white motion-reduce:animate-none"
+                makeRoomForText ? "animate-none" : "md:animate-bounce",
+                "md:hover rounded-full bg-black px-4 pb-2 pt-3 text-3xl text-white motion-reduce:animate-none md:mr-20 md:w-fit md:self-end md:justify-self-end md:border-2 md:border-lilac md:text-right"
               )}>
               FOR HIRE !!
             </button>

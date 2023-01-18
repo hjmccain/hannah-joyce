@@ -23,15 +23,15 @@ const Portfolio: React.FC<PortfolioProps> = ({
   // so that the scroll bar goes away.
 
   return (
-    <div className="portfolio-transition col-start-1 text-3xl">
+    <div className="portfolio-transition text-3xl md:col-start-1">
       <div
         className={classNames(
           !hidden
-            ? "top-[200px] h-fit opacity-100"
-            : "left-[-5000px] hidden h-0 opacity-0",
-          "absolute z-30 flex w-full flex-row border border-lilac-dark bg-lilac-dark"
+            ? "h-fit opacity-100 md:top-[200px]"
+            : "hidden h-0 opacity-0 md:left-[-5000px]",
+          "z-30 flex w-full flex-row border border-lilac-dark bg-lilac-dark md:absolute"
         )}>
-        <nav className="min-h-[90vh] w-[20rem] p-4 text-3xl text-white xl:text-4xl">
+        <nav className="hidden min-h-[90vh] w-[20rem] p-4 text-3xl text-white md:block xl:text-4xl">
           <div className="sticky top-4 left-0">
             <h4 className="mb-4">FILTER</h4>
             <div className="group flex flex-row items-center">
