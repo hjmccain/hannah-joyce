@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  font-family: "Nimbus";
-  src: url("../assets/fonts/NimbusRomNo9L-Reg.woff");
+  font-family: "Neue Haas Grotesk";
+  src: url("../assets/fonts/Helvetica.woff2");
 }
 
 .nav-transition:hover button {

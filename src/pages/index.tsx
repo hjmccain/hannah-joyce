@@ -77,7 +77,7 @@ const IndexPage: React.FC<PageProps> = () => {
               ? "mt-[-1.5rem] md:row-start-1"
               : "md:row-start-2",
             "justify-self-center",
-            "flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:items-center md:p-10 xl:col-start-2"
+            "detail-view-transition flex h-fit w-fit flex-col overflow-hidden transition-all duration-500 md:col-start-1 md:row-span-2 md:items-center md:p-10 xl:col-start-2"
           )}>
           <button
             className={classNames(
@@ -90,7 +90,7 @@ const IndexPage: React.FC<PageProps> = () => {
               setShowNav(true);
               showPortfolio && setShowPortfolio(false);
             }}>
-            hannah joyce
+            HANNAH JOYCE
           </button>
           {showAboutMe && (
             <DetailView
@@ -149,40 +149,42 @@ const IndexPage: React.FC<PageProps> = () => {
               </>
             </DetailView>
           )}
-          <DetailView
-            id="contact"
-            hidden={!showContact}
-            toggleSelf={handleSetShowContact}>
-            <nav className="mt-4 flex w-full flex-col text-3xl">
-              <li className="hover list-none text-center">
-                <a href="mailto:hannahjmccain@gmail.com">email</a>
-              </li>
-              <li className="hover list-none text-center">
-                <a
-                  href="https://www.instagram.com/imaginary_hannah/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  instagram
-                </a>
-              </li>
-              <li className="hover list-none text-center">
-                <a
-                  href="https://www.are.na/hannah-mccain"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  are.na
-                </a>
-              </li>
-              <li className="hover list-none text-center">
-                <a
-                  href="https://github.com/hjmccain"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  github
-                </a>
-              </li>
-            </nav>
-          </DetailView>
+          {showContact && (
+            <DetailView
+              id="contact"
+              hidden={!showContact}
+              toggleSelf={handleSetShowContact}>
+              <nav className="mt-4 flex w-full flex-col text-3xl">
+                <li className="hover list-none text-center">
+                  <a href="mailto:hannahjmccain@gmail.com">email</a>
+                </li>
+                <li className="hover list-none text-center">
+                  <a
+                    href="https://www.instagram.com/imaginary_hannah/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    instagram
+                  </a>
+                </li>
+                <li className="hover list-none text-center">
+                  <a
+                    href="https://www.are.na/hannah-mccain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    are.na
+                  </a>
+                </li>
+                <li className="hover list-none text-center">
+                  <a
+                    href="https://github.com/hjmccain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    github
+                  </a>
+                </li>
+              </nav>
+            </DetailView>
+          )}
         </div>
         <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
         {showNav && (

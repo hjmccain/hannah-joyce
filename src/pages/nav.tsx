@@ -32,14 +32,14 @@ const Nav: React.FC<NavProps> = ({
           className={classNames(
             "-5xl-xl md:-5xl-5xl absolute bottom-[-66px] z-10 ml-10 w-40 origin-[40px_40px] rounded-full border-2 border-lilac-dark bg-black py-6 hover:bg-lilac-light group-hover:w-72 group-hover:rotate-[32deg] md:ml-0 md:origin-[82px_82px] md:py-14 md:group-hover:w-[32rem] md:group-hover:-rotate-[32deg]"
           )}>
-          <span className="pl-32 text-xs uppercase opacity-0 transition-opacity delay-100 group-hover:text-5xl group-hover:opacity-100">
+          <span className="ml-8 pl-32 text-xs uppercase opacity-0 transition-opacity delay-100 group-hover:text-5xl group-hover:opacity-100">
             about
           </span>
         </button>
         <button
           onClick={toggleContact}
           className="-5xl-right -5xl-xl absolute bottom-[-66px] ml-10 w-40 origin-[40px_40px] rounded-full border-2 border-lilac-dark bg-black py-6 duration-1000 hover:bg-lilac-light group-hover:w-72 md:ml-0 md:origin-[82px_82px] md:py-14 md:group-hover:w-[32rem]">
-          <span className="mr-12 pl-32 text-xs uppercase opacity-0 transition-opacity delay-100 group-hover:text-5xl group-hover:opacity-100">
+          <span className="ml-16 pl-32 text-xs uppercase opacity-0 transition-opacity delay-100 group-hover:text-5xl group-hover:opacity-100">
             contact
           </span>
         </button>

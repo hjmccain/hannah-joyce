@@ -18,7 +18,7 @@ const DetailView: React.FC<DetailViewProps> = ({
     <div
       className={classNames(
         hidden ? "text-[0px] opacity-0" : "p-10 text-sm opacity-100 md:p-0",
-        "flex scroll-mt-4 flex-col bg-white transition-all duration-300 md:m-0 md:w-[550px]"
+        "detail-view flex scroll-mt-4 flex-col bg-white md:m-0 md:w-[550px]"
       )}>
       <button className="md:hidden" onClick={toggleSelf}>
         X

@@ -8,9 +8,9 @@ module.exports = {
     extend: {},
     fontFamily: {
       dingbats: ['Mister Pixel'],
+      // display: ['Saint', 'sans-serif'],
       display: ['Dark Garden', 'sans-serif'],
-      sans: ['Neue Haas Grotesk', 'sans-serif'],
-      serif: ['Nimbus', 'serif']
+      sans: ['Neue Haas Grotesk', 'sans-serif']
     },
     colors: {
       'lilac': '#DFC8DC',
