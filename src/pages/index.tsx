@@ -72,7 +72,7 @@ const IndexPage: React.FC<PageProps> = () => {
   };
 
   return (
-    <main className="bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark">
+    <main className="bg-[#9da693] bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark transition-[background]">
       <Marquee hideSelf={!showNav} />
       <div className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden md:grid md:grid-cols-1 md:grid-rows-3 md:items-start md:gap-4 md:overflow-auto xl:grid-cols-3">
         <div
