@@ -8,6 +8,7 @@ interface MarqueeProps {
 const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
   return (
     <div
+      id="marquee"
       className={classNames(
         hideSelf ? "invisible" : "visible",
         "marquee hidden w-full bg-black motion-reduce:invisible md:block"

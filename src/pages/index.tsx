@@ -25,8 +25,8 @@ const IndexPage: React.FC<PageProps> = () => {
       ? "hire"
       : showAboutMe
       ? "about"
-      : null;
-    const el = id && document.getElementById(id);
+      : "marquee";
+    const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({
         behavior: "smooth",
