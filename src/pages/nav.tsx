@@ -20,7 +20,7 @@ const Nav: React.FC<NavProps> = ({
       <div className="mb-10 block md:hidden">
         <button
           onClick={togglePortfolio}
-          className={classNames("marquee-small block w-full bg-black")}>
+          className={classNames("hover marquee-small block w-full bg-black")}>
           <div
             className="marquee-small__inner whitespace-nowrap"
             aria-hidden="true">
@@ -40,7 +40,7 @@ const Nav: React.FC<NavProps> = ({
         </button>
         <button
           onClick={toggleAbout}
-          className={classNames("marquee-small block w-full bg-black")}>
+          className={classNames("hover marquee-small block w-full bg-black")}>
           <div
             className="marquee-small__inner whitespace-nowrap"
             aria-hidden="true">
@@ -60,7 +60,7 @@ const Nav: React.FC<NavProps> = ({
         </button>
         <button
           onClick={toggleContact}
-          className={classNames("marquee-small block w-full bg-black")}>
+          className={classNames("hover marquee-small block w-full bg-black")}>
           <div
             className="marquee-small__inner whitespace-nowrap"
             aria-hidden="true">
