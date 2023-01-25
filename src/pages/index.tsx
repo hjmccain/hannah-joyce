@@ -8,7 +8,6 @@ import Portfolio from "../components/portfolio";
 import Marquee from "../components/marquee";
 // @ts-ignore
 import resume from "../assets/hannah-mccain-resume-2023.pdf";
-import * as PIXI from "pixi.js";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showNav, setShowNav] = React.useState(false);
@@ -44,33 +43,32 @@ const IndexPage: React.FC<PageProps> = () => {
     }
   }, []);
 
-  const handleSetX = (state: string) => {
-    switch (state) {
-      case "aboutMe": {
-        setShowAboutMe(!showAboutMe);
-        setShowContact(false);
-        setShowPortfolio(false);
-        setShowForHire(false);
-      }
-      case "contact": {
-        setShowContact(!showContact);
-        setShowAboutMe(false);
-        setShowPortfolio(false);
-        setShowForHire(false);
-      }
-      case "portfolio": {
-        setShowPortfolio(!showPortfolio);
-        setShowAboutMe(false);
-        setShowContact(false);
-        setShowForHire(false);
-      }
-      case "forHire": {
-        setShowPortfolio(false);
-        setShowAboutMe(false);
-        setShowContact(false);
-        setShowForHire(!showForHire);
-      }
-    }
+  const handleSetShowAboutMe = () => {
+    setShowAboutMe(!showAboutMe);
+    setShowContact(false);
+    setShowPortfolio(false);
+    setShowForHire(false);
+  };
+
+  const handleSetShowContact = () => {
+    setShowContact(!showContact);
+    setShowAboutMe(false);
+    setShowPortfolio(false);
+    setShowForHire(false);
+  };
+
+  const handleTogglePortfolio = () => {
+    setShowPortfolio(!showPortfolio);
+    setShowAboutMe(false);
+    setShowContact(false);
+    setShowForHire(false);
+  };
+
+  const handleSetShowForHire = () => {
+    setShowPortfolio(false);
+    setShowAboutMe(false);
+    setShowContact(false);
+    setShowForHire(!showForHire);
   };
 
   return (
@@ -104,7 +102,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <DetailView
               id="about"
               hidden={!showAboutMe}
-              toggleSelf={() => handleSetX("about")}>
+              toggleSelf={handleSetShowAboutMe}>
               <>
                 <p className="text-justify text-lg text-black md:m-4 md:text-xl">
                   is an artist, software engineer, and writer living in Tucson,
@@ -113,7 +111,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   and “artificial.” She is equal parts luddite and cyborg
                   futurist. Get in touch{" "}
                   <span
-                    onClick={() => handleSetX("forHire")}
+                    onClick={handleSetShowForHire}
                     role="button"
                     className="hover cursor-pointer underline">
                     if you need a frontend software developer
@@ -128,7 +126,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <DetailView
               id="hire"
               hidden={!showForHire}
-              toggleSelf={() => handleSetX("forHire")}>
+              toggleSelf={handleSetShowForHire}>
               <>
                 <a
                   className="hover mt-4 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
@@ -151,7 +149,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 </p>
                 <button
                   className="hover self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
-                  onClick={() => handleSetX("contact")}>
+                  onClick={handleSetShowContact}>
                   Get in touch!
                 </button>
               </>
@@ -161,7 +159,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <DetailView
               id="contact"
               hidden={!showContact}
-              toggleSelf={() => handleSetX("contact")}>
+              toggleSelf={handleSetShowContact}>
               <nav className="mt-4 flex w-full flex-col text-3xl">
                 <li className="hover list-none text-center">
                   <a href="mailto:hannahjmccain@gmail.com">email</a>
@@ -194,21 +192,18 @@ const IndexPage: React.FC<PageProps> = () => {
             </DetailView>
           )}
         </div>
-        <Portfolio
-          hidden={!showPortfolio}
-          toggleSelf={() => handleSetX("portfolio")}
-        />
+        <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
         {showNav && (
           <div className="flex h-full flex-col md:sticky md:bottom-16 md:col-span-1 md:col-start-1 md:row-start-3 md:mb-16 md:flex md:h-0 md:w-full md:flex-row md:justify-between md:self-end lg:col-span-3 lg:col-start-1">
             <div className={classNames("flex items-end")}>
               <Nav
-                toggleAbout={() => handleSetX("about")}
-                toggleContact={() => handleSetX("contact")}
-                togglePortfolio={() => handleSetX("portfolio")}
+                toggleAbout={handleSetShowAboutMe}
+                toggleContact={handleSetShowContact}
+                togglePortfolio={handleTogglePortfolio}
               />
             </div>
             <button
-              onClick={() => handleSetX("forHire")}
+              onClick={handleSetShowForHire}
               className={classNames(
                 makeRoomForText ? "animate-none" : "md:animate-bounce",
                 "hover rounded-full bg-black px-4 pb-2 pt-3 text-3xl text-white motion-reduce:animate-none md:mr-20 md:w-fit md:self-end md:justify-self-end md:border-2 md:border-lilac md:text-right"
