@@ -1,11 +1,11 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import Nav from "./nav";
+import Nav from "../components/nav";
 import classNames from "classnames";
-import DetailView from "./detailView";
-import Portfolio from "./portfolio";
+import DetailView from "../components/detailView";
+import Portfolio from "../components/portfolio";
 // import MobilePlaceholder from "./mobilePlaceholder";
-import Marquee from "./marquee";
+import Marquee from "../components/marquee";
 // @ts-ignore
 import resume from "../assets/hannah-mccain-resume-2023.pdf";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import DetailView from "./detailView";
+import DetailView from "../components/detailView";
 
 const MobilePlaceholder = () => {
   return (
