@@ -27,6 +27,11 @@
   src: url("../assets/fonts/Director-Light.woff");
 }
 
+@font-face {
+  font-family: "Oddballz";
+  src: url("../assets/fonts/oddballz.woff");
+}
+
 .nav-transition:hover button {
   transition-delay: 0ms, 200ms;
   transition-property: width, transform;

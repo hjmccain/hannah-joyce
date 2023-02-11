@@ -13,7 +13,7 @@ module.exports = {
       },
       fontFamily: {
         dingbats: ['Mister Pixel'],
-        display: ['School', 'sans-serif'],
+        display: ['Oddballz', 'sans-serif'],
         sans: ['Director', 'sans-serif']
       },
       colors: {
@@ -23,7 +23,11 @@ module.exports = {
         'lilac-light': '#EDE0EC',
         'lilac-extra-light': '#FBF8FB',
         'white': '#ffffff',
-        'black': '#000000'
+        'black': '#000000',
+        'primary': '#DFC8DC',
+        'secondary': '#DFC8DC',
+        'tertiary': '#DFC8DC',
+        'background': '#ffffff',
       }
     }
   },

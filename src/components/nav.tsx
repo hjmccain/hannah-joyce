@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { Dispatch } from "react";
 
 interface NavProps {
   toggleAbout: () => void;
@@ -13,72 +13,15 @@ const Nav: React.FC<NavProps> = ({
   togglePortfolio,
 }: NavProps) => {
   return (
-    <nav className="nav-transition group relative h-fit md:row-start-3 md:m-10 md:mb-16 md:content-end">
+    <nav className="nav-transition group relative h-fit rotate-[52deg]">
       <button className="hidden rotate-[-28deg] rounded-full border-2 border-lilac bg-black py-6 px-4 uppercase text-white opacity-100 duration-1000 group-hover:opacity-0 md:absolute md:bottom-[-66px] md:ml-0 md:block md:py-[3.6rem] md:px-[.8rem] md:text-5xl">
         menu
       </button>
-      <div className="mb-10 block md:hidden">
-        <button
-          onClick={togglePortfolio}
-          className={classNames("hover marquee-small block w-full bg-black")}>
-          <div
-            className="marquee-small__inner whitespace-nowrap"
-            aria-hidden="true">
-            <span>
-              PORTFOLIO<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              PORTFOLIO<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              PORTFOLIO<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              PORTFOLIO<span className="font-dingbats">J</span>
-            </span>
-          </div>
-        </button>
-        <button
-          onClick={toggleAbout}
-          className={classNames("hover marquee-small block w-full bg-black")}>
-          <div
-            className="marquee-small__inner whitespace-nowrap"
-            aria-hidden="true">
-            <span>
-              ABOUT<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              ABOUT<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              ABOUT<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              ABOUT<span className="font-dingbats">J</span>
-            </span>
-          </div>
-        </button>
-        <button
-          onClick={toggleContact}
-          className={classNames("hover marquee-small block w-full bg-black")}>
-          <div
-            className="marquee-small__inner whitespace-nowrap"
-            aria-hidden="true">
-            <span>
-              CONTACT<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              CONTACT<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              CONTACT<span className="font-dingbats">J</span>
-            </span>
-            <span>
-              CONTACT<span className="font-dingbats">J</span>
-            </span>
-          </div>
-        </button>
-      </div>
+      <MobileNav
+        toggleAbout={toggleAbout}
+        toggleContact={toggleContact}
+        togglePortfolio={togglePortfolio}
+      />
       <div className="hidden md:mt-0 md:block md:opacity-0 group-hover:md:opacity-100">
         <button
           onClick={togglePortfolio}
@@ -107,6 +50,81 @@ const Nav: React.FC<NavProps> = ({
         </button>
       </div>
     </nav>
+  );
+};
+
+const MobileNav = ({
+  togglePortfolio,
+  toggleContact,
+  toggleAbout,
+}: {
+  togglePortfolio: Dispatch<any>;
+  toggleContact: Dispatch<any>;
+  toggleAbout: Dispatch<any>;
+}) => {
+  return (
+    <div className="mb-10 block md:hidden">
+      <button
+        onClick={togglePortfolio}
+        className={classNames("hover marquee-small block w-full bg-black")}>
+        <div
+          className="marquee-small__inner whitespace-nowrap"
+          aria-hidden="true">
+          <span>
+            PORTFOLIO<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            PORTFOLIO<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            PORTFOLIO<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            PORTFOLIO<span className="font-dingbats">J</span>
+          </span>
+        </div>
+      </button>
+      <button
+        onClick={toggleAbout}
+        className={classNames("hover marquee-small block w-full bg-black")}>
+        <div
+          className="marquee-small__inner whitespace-nowrap"
+          aria-hidden="true">
+          <span>
+            ABOUT<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ABOUT<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ABOUT<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ABOUT<span className="font-dingbats">J</span>
+          </span>
+        </div>
+      </button>
+      <button
+        onClick={toggleContact}
+        className={classNames("hover marquee-small block w-full bg-black")}>
+        <div
+          className="marquee-small__inner whitespace-nowrap"
+          aria-hidden="true">
+          <span>
+            CONTACT<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            CONTACT<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            CONTACT<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            CONTACT<span className="font-dingbats">J</span>
+          </span>
+        </div>
+      </button>
+    </div>
   );
 };
 

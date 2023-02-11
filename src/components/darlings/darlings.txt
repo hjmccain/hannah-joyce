@@ -1,0 +1,106 @@
+          {showAboutMe && (
+            <DetailView
+              id="about"
+              hidden={!showAboutMe}
+              toggleSelf={handleSetShowAboutMe}>
+              <>
+                <p className="text-justify text-lg text-white md:m-4 md:text-2xl">
+                  is an artist, software engineer, and writer living in Tucson,
+                  AZ. Much of her work explores the edges, overlaps, and
+                  juxtapositions between the human and non-human, the “natural”
+                  and “artificial.” She is equal parts luddite and cyborg
+                  futurist. Get in touch{" "}
+                  <span
+                    onClick={handleSetShowForHire}
+                    role="button"
+                    className="hover cursor-pointer underline">
+                    if you need a frontend software developer
+                  </span>
+                  , want a poster designed, or wanna talk about GPT-3 or poetry
+                  (or both!). Stay safe out there xo :)
+                </p>
+              </>
+            </DetailView>
+          )}
+          {showForHire && (
+            <DetailView
+              id="hire"
+              hidden={!showForHire}
+              toggleSelf={handleSetShowForHire}>
+              <>
+                <p className="text-justify text-lg text-white md:m-12 md:text-2xl">
+                  is always looking for interesting work & fun collaborations.
+                  Get in touch about FRONTEND CODING & CONSULTING ! React
+                  projects ! Frontend development projects ! Weird internet art
+                  projects ! Visual design work ! Portrait & painting
+                  commissions ! Poetry workshops & collaborations ! Making music
+                  ! ETC ETC ETC :)
+                </p>
+                <a
+                  className="hover my-6 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light md:text-2xl"
+                  href={resume}
+                  download>
+                  &gt;&gt; Download Hannah's resumé. &lt;&lt;
+                </a>
+                <button
+                  className="hover self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light md:text-2xl"
+                  onClick={handleSetShowContact}>
+                  Get in touch!
+                </button>
+              </>
+            </DetailView>
+          )}
+          {showContact && (
+            <DetailView
+              id="contact"
+              hidden={!showContact}
+              toggleSelf={handleSetShowContact}>
+              <nav className="mt-4 flex w-full flex-col text-3xl">
+                <li className="hover list-none text-center">
+                  <a href="mailto:hannahjmccain@gmail.com">email</a>
+                </li>
+                <li className="hover list-none text-center">
+                  <a
+                    href="https://www.instagram.com/imaginary_hannah/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    instagram
+                  </a>
+                </li>
+                <li className="hover list-none text-center">
+                  <a
+                    href="https://www.are.na/hannah-mccain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    are.na
+                  </a>
+                </li>
+                <li className="hover list-none text-center">
+                  <a
+                    href="https://github.com/hjmccain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    github
+                  </a>
+                </li>
+              </nav>
+            </DetailView>
+          )}
+        </div>
+        <Portfolio hidden={!showPortfolio} toggleSelf={handleTogglePortfolio} />
+
+
+
+
+
+        ///
+                    {/* <button
+              onClick={() => null}
+              className={classNames(
+                // makeRoomForText ?
+                "animate-none",
+                // : "md:animate-bounce",
+                "hover rounded-full bg-black px-4 pb-2 pt-3 text-3xl text-white motion-reduce:animate-none md:mr-12 md:w-fit md:self-end md:justify-self-end md:border-2 md:border-lilac md:text-right"
+              )}>
+              FOR HIRE !!
+            </button> */}

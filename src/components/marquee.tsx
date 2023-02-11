@@ -19,8 +19,7 @@ const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
           <span className="font-dingbats">J</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
-          check back for updates to the portfolio{" "}
-          <span className="font-dingbats">V</span>
+          check back for updates <span className="font-dingbats">V</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
@@ -30,8 +29,7 @@ const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
           <span className="font-dingbats">J</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
-          check back for updates to the portfolio{" "}
-          <span className="font-dingbats">V</span>
+          check back for updates <span className="font-dingbats">V</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
@@ -41,8 +39,7 @@ const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
           <span className="font-dingbats">J</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
-          check back for updates to the portfolio{" "}
-          <span className="font-dingbats">V</span>
+          check back for updates <span className="font-dingbats">V</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
@@ -52,8 +49,7 @@ const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
           <span className="font-dingbats">J</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
-          check back for updates to the portfolio{" "}
-          <span className="font-dingbats">V</span>
+          check back for updates <span className="font-dingbats">V</span>
         </span>
         <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
