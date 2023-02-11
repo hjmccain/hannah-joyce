@@ -13,8 +13,18 @@
 }
 
 @font-face {
+  font-family: "School";
+  src: url("../assets/fonts/FT88-School.woff");
+}
+
+@font-face {
   font-family: "Neue Haas Grotesk";
   src: url("../assets/fonts/Helvetica.woff2");
+}
+
+@font-face {
+  font-family: "Director";
+  src: url("../assets/fonts/Director-Light.woff");
 }
 
 .nav-transition:hover button {

@@ -31,7 +31,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
             : "hidden h-0 opacity-0 md:left-[-5000px]",
           "z-30 flex w-full flex-row border border-lilac-dark bg-lilac-dark md:absolute"
         )}>
-        <nav className="hidden min-h-[90vh] w-[20rem] p-4 text-3xl text-white md:block min-[1418px]:text-4xl">
+        <nav className="hidden min-h-[90vh] w-[35rem] p-4 text-3xl text-white md:block min-[1418px]:text-4xl">
           <div className="sticky top-4 left-0">
             <h4 className="mb-4">FILTER</h4>
             <div className="group flex flex-row items-center">

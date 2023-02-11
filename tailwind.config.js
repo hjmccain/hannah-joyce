@@ -5,21 +5,26 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
-    fontFamily: {
-      dingbats: ['Mister Pixel'],
-      // display: ['Saint', 'sans-serif'],
-      display: ['Dark Garden', 'sans-serif'],
-      sans: ['Neue Haas Grotesk', 'sans-serif']
-    },
-    colors: {
-      'lilac': '#DFC8DC',
-      'lilac-dark': '#B18AAD',
-      'lilac-muted-dark': '#C6AEC3',
-      'lilac-light': '#EDE0EC',
-      'lilac-extra-light': '#FBF8FB',
-      'white': '#ffffff',
-      'black': '#000000'
+    extend: {
+      fontSize: {
+        med: '6rem',
+        big: '8rem',
+        bigger: '10rem',
+      },
+      fontFamily: {
+        dingbats: ['Mister Pixel'],
+        display: ['School', 'sans-serif'],
+        sans: ['Director', 'sans-serif']
+      },
+      colors: {
+        'lilac': '#DFC8DC',
+        'lilac-dark': '#B18AAD',
+        'lilac-muted-dark': '#C6AEC3',
+        'lilac-light': '#EDE0EC',
+        'lilac-extra-light': '#FBF8FB',
+        'white': '#ffffff',
+        'black': '#000000'
+      }
     }
   },
   plugins: [],

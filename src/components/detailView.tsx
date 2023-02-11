@@ -18,7 +18,7 @@ const DetailView: React.FC<DetailViewProps> = ({
     <div
       className={classNames(
         hidden ? "text-[0px] opacity-0" : "p-2 pb-4 text-sm opacity-100 md:p-0",
-        "detail-view flex scroll-mt-4 flex-col bg-white md:m-0 md:w-[550px]"
+        "detail-view flex scroll-mt-4 flex-col md:m-0"
       )}>
       <button
         className={classNames(

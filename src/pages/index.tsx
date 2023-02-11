@@ -10,7 +10,7 @@ import Marquee from "../components/marquee";
 import resume from "../assets/hannah-mccain-resume-2023.pdf";
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [showNav, setShowNav] = React.useState(false);
+  const [showNav, setShowNav] = React.useState(true);
   const [showAboutMe, setShowAboutMe] = React.useState(false);
   const [showContact, setShowContact] = React.useState(false);
   const [showPortfolio, setShowPortfolio] = React.useState(false);
@@ -72,7 +72,8 @@ const IndexPage: React.FC<PageProps> = () => {
   };
 
   return (
-    <main className="bg-[#9da693] bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark transition-[background]">
+    <main className="bg-black font-sans text-lilac-dark transition-[background]">
+      {/* <main className="bg-[#9da693] bg-[url('../assets/forest-floor.jpg')] bg-cover font-sans text-lilac-dark transition-[background]"> */}
       <Marquee hideSelf={!showNav} />
       <div className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden md:grid md:grid-cols-1 md:grid-rows-3 md:items-start md:gap-4 md:overflow-auto xl:grid-cols-3">
         <div
@@ -89,8 +90,8 @@ const IndexPage: React.FC<PageProps> = () => {
             className={classNames(
               showNav && !showPortfolio
                 ? "cursor-default border-lilac bg-black text-lilac-muted-dark"
-                : "hover bg-lilac-dark text-lilac-light",
-              "h-40 w-full px-10 text-center font-display text-6xl transition-all duration-700 md:m-0 md:my-4 md:mb-4 md:h-36 md:w-auto md:whitespace-nowrap md:rounded-full md:border-2 md:text-[6rem]"
+                : "hover",
+              "h-40 w-full px-10 text-center font-display text-6xl transition-all duration-700 md:m-0 md:my-4 md:h-fit md:w-auto md:text-bigger lg:whitespace-nowrap"
             )}
             onClick={() => {
               setShowNav(true);
@@ -104,7 +105,7 @@ const IndexPage: React.FC<PageProps> = () => {
               hidden={!showAboutMe}
               toggleSelf={handleSetShowAboutMe}>
               <>
-                <p className="text-justify text-lg text-black md:m-4 md:text-xl">
+                <p className="text-justify text-lg text-white md:m-4 md:text-2xl">
                   is an artist, software engineer, and writer living in Tucson,
                   AZ. Much of her work explores the edges, overlaps, and
                   juxtapositions between the human and non-human, the “natural”
@@ -128,14 +129,9 @@ const IndexPage: React.FC<PageProps> = () => {
               hidden={!showForHire}
               toggleSelf={handleSetShowForHire}>
               <>
-                <a
-                  className="hover mt-4 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
-                  href={resume}
-                  download>
-                  &gt;&gt; Download Hannah's resumé. &lt;&lt;
-                </a>
-                <p className="m-4 bg-lilac-light py-8 text-center text-lilac-dark md:text-xl">
+                {/* <p className="m-4 my-12 text-center text-white md:text-3xl">
                   <span className="underline">HIRE HANNAH FOR</span>
+                  <br />
                   <br />
                   Coding & consulting
                   <br />
@@ -146,9 +142,23 @@ const IndexPage: React.FC<PageProps> = () => {
                   Visual design work
                   <br />
                   Portrait/painting commissions
+                </p> */}
+                <p className="text-justify text-lg text-white md:m-12 md:text-2xl">
+                  is always looking for interesting work & fun collaborations.
+                  Get in touch about FRONTEND CODING & CONSULTING ! React
+                  projects ! Frontend development projects ! Weird internet art
+                  projects ! Visual design work ! Portrait & painting
+                  commissions ! Poetry workshops & collaborations ! Making music
+                  ! ETC ETC ETC :)
                 </p>
+                <a
+                  className="hover my-6 self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light md:text-2xl"
+                  href={resume}
+                  download>
+                  &gt;&gt; Download Hannah's resumé. &lt;&lt;
+                </a>
                 <button
-                  className="hover self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light"
+                  className="hover self-center rounded-full border-2 border-lilac-light bg-lilac-dark px-2 py-1 text-lilac-extra-light md:text-2xl"
                   onClick={handleSetShowContact}>
                   Get in touch!
                 </button>
@@ -206,7 +216,7 @@ const IndexPage: React.FC<PageProps> = () => {
               onClick={handleSetShowForHire}
               className={classNames(
                 makeRoomForText ? "animate-none" : "md:animate-bounce",
-                "hover rounded-full bg-black px-4 pb-2 pt-3 text-3xl text-white motion-reduce:animate-none md:mr-20 md:w-fit md:self-end md:justify-self-end md:border-2 md:border-lilac md:text-right"
+                "hover rounded-full bg-black px-4 pb-2 pt-3 text-3xl text-white motion-reduce:animate-none md:mr-12 md:w-fit md:self-end md:justify-self-end md:border-2 md:border-lilac md:text-right"
               )}>
               FOR HIRE !!
             </button>

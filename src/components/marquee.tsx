@@ -14,48 +14,48 @@ const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
         "marquee hidden w-full bg-black motion-reduce:invisible md:block"
       )}>
       <div className="marquee__inner whitespace-nowrap" aria-hidden="true">
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           this website is a work in progress{" "}
           <span className="font-dingbats">J</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           check back for updates to the portfolio{" "}
           <span className="font-dingbats">V</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           this website is a work in progress{" "}
           <span className="font-dingbats">J</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           check back for updates to the portfolio{" "}
           <span className="font-dingbats">V</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           this website is a work in progress{" "}
           <span className="font-dingbats">J</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           check back for updates to the portfolio{" "}
           <span className="font-dingbats">V</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           this website is a work in progress{" "}
           <span className="font-dingbats">J</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           check back for updates to the portfolio{" "}
           <span className="font-dingbats">V</span>
         </span>
-        <span className="w-[45rem] whitespace-nowrap text-center">
+        <span className="w-[55rem] whitespace-nowrap text-center">
           hope ur having a great day !
         </span>
       </div>
