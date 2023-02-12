@@ -32,6 +32,16 @@
   src: url("../assets/fonts/oddballz.woff");
 }
 
+@font-face {
+  font-family: "Yorker";
+  src: url("../assets/fonts/YorkerRegular.woff");
+}
+
+@font-face {
+  font-family: "YRM";
+  src: url("../assets/fonts/Your-Royal-Majesty-Fancy.woff");
+}
+
 .nav-transition:hover button {
   transition-delay: 0ms, 200ms;
   transition-property: width, transform;

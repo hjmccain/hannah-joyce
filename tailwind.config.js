@@ -13,7 +13,7 @@ module.exports = {
       },
       fontFamily: {
         dingbats: ['Mister Pixel'],
-        display: ['Oddballz', 'sans-serif'],
+        display: ['YRM', 'sans-serif'],
         sans: ['Director', 'sans-serif']
       },
       colors: {

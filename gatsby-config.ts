@@ -20,6 +20,13 @@ const config: GatsbyConfig = {
         icon: "src/assets/icon.png",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images/`,
+      },
+    },
   ],
 };
 
