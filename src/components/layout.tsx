@@ -67,8 +67,8 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
               Mister Pixel Tools
             </span>
           </a>
-          . Major thanks to the awesome open source foundries & non-Google font
-          resources out there !
+          . Major thanks to the awesome open source foundries & non-Google free
+          font resources out there !
         </p>
       </div>
       <div>
