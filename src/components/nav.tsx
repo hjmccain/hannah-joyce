@@ -58,7 +58,7 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
 
 const MobileNav = ({}: {}) => {
   return (
-    <div className="mb-12">
+    <div className="mb-12 md:hidden">
       Sorry, the mobile version of this site currently kinda sucks, and maybe
       always will. Find me on{" "}
       <a

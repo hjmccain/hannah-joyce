@@ -8,38 +8,8 @@
 }
 
 @font-face {
-  font-family: "Dark Garden";
-  src: url("../assets/fonts/DarkGardenMK.woff");
-}
-
-@font-face {
-  font-family: "School";
-  src: url("../assets/fonts/FT88-School.woff");
-}
-
-@font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("../assets/fonts/Helvetica.woff2");
-}
-
-@font-face {
   font-family: "Director";
   src: url("../assets/fonts/Director-Light.woff");
-}
-
-@font-face {
-  font-family: "Oddballz";
-  src: url("../assets/fonts/oddballz.woff");
-}
-
-@font-face {
-  font-family: "Yorker";
-  src: url("../assets/fonts/YorkerRegular.woff");
-}
-
-@font-face {
-  font-family: "YRM";
-  src: url("../assets/fonts/Your-Royal-Majesty-Fancy.woff");
 }
 
 @font-face {

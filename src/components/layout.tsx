@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
             "md:m-0 md:my-12 md:w-auto md:text-bigger"
           )}>
           <p>HANNAH</p>
-          <p className="mt-[-3rem]">JOYCE</p>
+          <p className="mt-[-3rem] md:mt-[-9rem]">JOYCE</p>
         </div>
       </div>
       <div
