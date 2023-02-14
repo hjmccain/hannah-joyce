@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       </div>
       <div
         className={classNames(
-          "detail-view-transition flex w-full flex-col justify-self-center transition-all duration-500 md:mb-40"
+          "detail-view-transition flex w-full flex-col justify-self-center transition-all duration-500 md:mb-52"
         )}>
         <div
           className={classNames(
@@ -34,6 +34,42 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
           "flex flex-grow flex-col justify-center md:mx-24"
         )}>
         {children}
+      </div>
+      <div className="mt-[-40px] flex h-[40px] items-end text-xs">
+        <p>
+          This website uses the fonts{" "}
+          <a
+            href="https://velvetyne.fr/fonts/picnic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classNames()}>
+            <span className=" text-primary transition-opacity delay-100 hover:text-4xl">
+              PicNic
+            </span>
+          </a>
+          {", "}
+          <a
+            href="https://fontesk.com/director-typeface/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classNames()}>
+            <span className=" text-primary transition-opacity delay-100 hover:text-4xl">
+              Director
+            </span>
+          </a>
+          , and{" "}
+          <a
+            href="https://velvetyne.fr/fonts/mr-pixel/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classNames()}>
+            <span className=" text-primary transition-opacity delay-100 hover:text-4xl">
+              Mister Pixel Tools
+            </span>
+          </a>
+          . Major thanks to the awesome open source foundries & non-Google font
+          resources out there !
+        </p>
       </div>
       <div>
         <li className="list-none bg-primary py-[.18rem] text-center text-[2rem] text-white hover:bg-black">

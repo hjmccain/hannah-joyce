@@ -8,7 +8,7 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
     <nav className="nav-transition group relative z-10 h-fit md:rotate-[52deg]">
       <a
         className={classNames(
-          "hidden rotate-[-28deg] rounded-full border-2 border-primary bg-primary py-6 px-4 uppercase text-white opacity-100 duration-1000 group-hover:opacity-0",
+          "hidden rotate-[-28deg] rounded-full border-2 border-white bg-primary py-6 px-4 uppercase text-white opacity-100 duration-1000 group-hover:opacity-0",
           "md:absolute md:bottom-[-66px] md:ml-0 md:block md:py-[3.6rem] md:px-[.8rem] md:text-4xl"
         )}>
         links

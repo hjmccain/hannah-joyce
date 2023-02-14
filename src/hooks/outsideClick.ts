@@ -11,10 +11,12 @@ const useOutsideClick = (ref: any, handler: () => void) => {
     };
 
     document.addEventListener("mousedown", listener, true);
+    document.addEventListener("mouseover", listener, true);
     document.addEventListener("touchstart", listener, true);
 
     return () => {
       document.removeEventListener("mousedown", listener, true);
+      document.removeEventListener("mouseover", listener, true);
       document.removeEventListener("touchstart", listener, true);
     };
   }, [ref, handler]);

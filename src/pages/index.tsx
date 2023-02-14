@@ -12,7 +12,7 @@ export type AllFile = {
 
 const Index: React.FC<PageProps> = () => {
   const [selected, setSelected] = useState<string | null>(null);
-  const ref = useRef<HTMLTableElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   useOutsideClick(ref, () => setSelected(null));
   const { allFile } = useStaticQuery(graphql`
     query imageQuery {
@@ -48,7 +48,7 @@ const Index: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <div className="mb-48 flex flex-col items-center">
+      <div ref={ref} className="mb-48 flex flex-col items-center">
         <Image
           top="15%"
           left="30%"
@@ -80,9 +80,8 @@ const Index: React.FC<PageProps> = () => {
           selfSelected={selected === "tucson"}
         />
         <table
-          ref={ref}
           id="bio-table"
-          className="relative z-10 w-full text-black md:text-4xl">
+          className="relative z-10 w-full cursor-pointer text-black md:text-4xl">
           <tbody>
             <tr className="border-y border-black">
               <td
@@ -117,7 +116,7 @@ const Index: React.FC<PageProps> = () => {
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
-                software developer
+                software developer,
               </td>
             </tr>
             <tr className="border-y border-black">
