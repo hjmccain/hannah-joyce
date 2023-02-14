@@ -42,7 +42,12 @@
   src: url("../assets/fonts/Your-Royal-Majesty-Fancy.woff");
 }
 
-.nav-transition:hover button {
+@font-face {
+  font-family: "PicNic";
+  src: url("../assets/fonts/PicNic-Regular.woff");
+}
+
+.nav-transition:hover a {
   transition-delay: 0ms, 200ms;
   transition-property: width, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

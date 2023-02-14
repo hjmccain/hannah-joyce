@@ -11,7 +11,7 @@ const Marquee: React.FC<MarqueeProps> = ({ hideSelf }: MarqueeProps) => {
       id="marquee"
       className={classNames(
         hideSelf ? "invisible" : "visible",
-        "marquee hidden w-full bg-black motion-reduce:invisible md:block"
+        "marquee hidden w-full bg-primary text-white motion-reduce:invisible md:block"
       )}>
       <div className="marquee__inner whitespace-nowrap" aria-hidden="true">
         <span className="w-[55rem] whitespace-nowrap text-center">

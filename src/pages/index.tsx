@@ -34,6 +34,8 @@ const Index: React.FC<PageProps> = () => {
 
     function handleHover(e: MouseEvent) {
       const hovered = (e.target as HTMLButtonElement)?.id;
+      console.log("hovered!");
+
       setSelected(hovered);
     }
 
@@ -48,84 +50,120 @@ const Index: React.FC<PageProps> = () => {
     <Layout>
       <div className="mb-48 flex flex-col items-center">
         <Image
-          top={0}
-          left={0}
-          imageData={findImage(allFile, "item-1")}
-          selfSelected={selected === "item-1"}
+          top="15%"
+          left="30%"
+          imageData={findImage(allFile, "hannah")}
+          selfSelected={selected === "hannah"}
         />
         <Image
-          top={0}
-          left={0}
-          imageData={findImage(allFile, "item-2")}
-          selfSelected={selected === "item-2"}
+          top="25%"
+          left="45%"
+          imageData={findImage(allFile, "writer")}
+          selfSelected={selected === "writer"}
         />
         <Image
-          top={0}
-          left={0}
-          imageData={findImage(allFile, "item-3")}
-          selfSelected={selected === "item-3"}
+          top="20%"
+          left="40%"
+          imageData={findImage(allFile, "coder")}
+          selfSelected={selected === "coder"}
         />
         <Image
-          top={0}
-          left={0}
-          imageData={findImage(allFile, "item-4")}
-          selfSelected={selected === "item-4"}
+          top="30%"
+          left="35%"
+          imageData={findImage(allFile, "artist")}
+          selfSelected={selected === "artist"}
         />
         <Image
-          top={0}
-          left={0}
-          imageData={findImage(allFile, "item-5")}
-          selfSelected={selected === "item-5"}
+          top="50%"
+          left="60%"
+          imageData={findImage(allFile, "tucson")}
+          selfSelected={selected === "tucson"}
         />
-        <Image
-          top={0}
-          left={0}
-          imageData={findImage(allFile, "item-6")}
-          selfSelected={selected === "item-6"}
-        />
-        <table ref={ref} id="bio-table" className="w-full text-4xl text-black">
-          <tr className="border-y border-black">
-            <td
-              id="item-1"
-              className="w-full py-4 text-left transition-colors hover:bg-black hover:text-white">
-              Hi, my name is Hannah !
-            </td>
-          </tr>
-          <tr className="border-y border-black">
-            <td
-              id="item-2"
-              className="w-full py-4 text-left transition-colors hover:bg-black hover:text-white">
-              I'm a writer,
-            </td>
-          </tr>
-          <tr className="border-y border-black">
-            <td
-              id="item-3"
-              className="w-full py-4 text-left transition-colors hover:bg-black hover:text-white">
-              software developer
-            </td>
-          </tr>
-          <tr className="border-y border-black">
-            <td
-              id="item-4"
-              className="w-full py-4 text-left transition-colors hover:bg-black hover:text-white">
-              & artist
-            </td>
-          </tr>
-          <tr className="border-y border-black">
-            <td
-              id="item-5"
-              className="w-full py-4 pl-12 text-left italic transition-colors hover:bg-black hover:text-white">
-              (of many kinds)
-            </td>
-          </tr>
-          <tr className="border-y border-black">
-            <td
-              id="item-6"
-              className="w-full py-4 text-left transition-colors hover:bg-black hover:text-white">
-              living in sunny Tucson, Arizona !
-            </td>
-          </tr>
+        <table
+          ref={ref}
+          id="bio-table"
+          className="relative z-10 w-full text-black md:text-4xl">
+          <tbody>
+            <tr className="border-y border-black">
+              <td
+                id="hannah"
+                className={classNames(
+                  "w-full py-4 text-left transition-colors",
+                  selected === "hannah"
+                    ? "bg-black text-white"
+                    : "bg-secondary text-black"
+                )}>
+                Hi, my name is Hannah !
+              </td>
+            </tr>
+            <tr className="border-y border-black">
+              <td
+                id="writer"
+                className={classNames(
+                  "w-full py-4 text-left transition-colors",
+                  selected === "writer"
+                    ? "bg-black text-white"
+                    : "bg-secondary text-black"
+                )}>
+                I'm a writer,
+              </td>
+            </tr>
+            <tr className="border-y border-black">
+              <td
+                id="coder"
+                className={classNames(
+                  "w-full py-4 text-left transition-colors",
+                  selected === "coder"
+                    ? "bg-black text-white"
+                    : "bg-secondary text-black"
+                )}>
+                software developer
+              </td>
+            </tr>
+            <tr className="border-y border-black">
+              <td
+                id="artist"
+                className={classNames(
+                  "w-full py-4 text-left transition-colors",
+                  selected === "artist"
+                    ? "bg-black text-white"
+                    : "bg-secondary text-black"
+                )}>
+                & artist
+              </td>
+            </tr>
+            <tr className="group w-full border-y border-black">
+              <td
+                id="artist-2"
+                className={classNames(
+                  "w-full py-4 text-left italic transition-colors md:pl-12",
+                  selected === "artist-2"
+                    ? "bg-black text-white"
+                    : "bg-secondary text-black"
+                )}>
+                (of many kinds)
+                <a
+                  className="ml-40 inline-block text-white opacity-0 hover:text-black hover:underline group-hover:opacity-100"
+                  href="https://sonyabladeband.bandcamp.com/album/demo"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  &gt;&gt; sonya blade
+                </a>
+              </td>
+            </tr>
+            <tr className="border-y border-black">
+              <td
+                id="tucson"
+                className={classNames(
+                  "w-full py-4 text-left transition-colors",
+                  selected === "tucson"
+                    ? "bg-black text-white"
+                    : "bg-secondary text-black"
+                )}>
+                living in sunny Tucson, Arizona !
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </Layout>
@@ -138,19 +176,21 @@ const Image = ({
   imageData,
   selfSelected,
 }: {
-  top: number;
-  left: number;
+  top: string;
+  left: string;
   imageData: IGatsbyImageData | null;
   selfSelected: boolean;
 }) => {
-  console.log(selfSelected);
-
   if (imageData) {
     return (
       <div
+        style={{
+          top,
+          left,
+        }}
         className={classNames(
-          selfSelected ? "z-30 opacity-100" : "opacity-0",
-          "relative w-24"
+          selfSelected ? "z-30 opacity-100" : "z-0 opacity-0",
+          "absolute md:w-1/3"
         )}>
         <GatsbyImage image={imageData} alt="" className="" />
       </div>

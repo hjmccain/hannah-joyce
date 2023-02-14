@@ -7,13 +7,13 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        med: '6rem',
+        med: '5rem',
         big: '8rem',
-        bigger: '10rem',
+        bigger: '12rem',
       },
       fontFamily: {
         dingbats: ['Mister Pixel'],
-        display: ['YRM', 'sans-serif'],
+        display: ['PicNic', 'sans-serif'],
         sans: ['Director', 'sans-serif']
       },
       colors: {
@@ -24,8 +24,8 @@ module.exports = {
         'lilac-extra-light': '#FBF8FB',
         'white': '#ffffff',
         'black': '#000000',
-        'primary': '#DFC8DC',
-        'secondary': '#DFC8DC',
+        'primary': '#FB6107',
+        'secondary': '#FBDA46',
         'tertiary': '#DFC8DC',
         'background': '#ffffff',
       }
