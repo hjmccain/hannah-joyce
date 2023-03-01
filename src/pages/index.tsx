@@ -48,7 +48,7 @@ const Index: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <div ref={ref} className="mb-48 flex flex-col items-center">
+      <div ref={ref} className="mb-16 mt-40 flex flex-col items-center lg:mt-0">
         <Image
           top="15%"
           left="30%"
@@ -64,8 +64,8 @@ const Index: React.FC<PageProps> = () => {
         <Image
           top="20%"
           left="40%"
-          imageData={findImage(allFile, "coder")}
-          selfSelected={selected === "coder"}
+          imageData={findImage(allFile, "coder3")}
+          selfSelected={selected === "coder3"}
         />
         <Image
           top="30%"
@@ -109,10 +109,10 @@ const Index: React.FC<PageProps> = () => {
             </tr>
             <tr className="border-y border-black">
               <td
-                id="coder"
+                id="coder3"
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  selected === "coder"
+                  selected === "coder3"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>

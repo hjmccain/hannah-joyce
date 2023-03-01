@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
         <div
           className={classNames(
             "h-40 w-full px-10 text-center font-display text-med text-primary",
-            "md:m-0 md:my-12 md:w-auto md:text-bigger"
+            "md:m-0 md:mb-12 md:w-auto md:text-bigger"
           )}>
           <p>HANNAH</p>
           <p className="mt-[-3rem] md:mt-[-9rem]">JOYCE</p>
@@ -35,7 +35,16 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
         )}>
         {children}
       </div>
-      <div className="mt-[-40px] flex h-[40px] items-end text-xs">
+      <div className="mb-12 flex w-full justify-end pr-12">
+        <li className="flex h-[150px] w-[150px] place-items-center rounded-full border-2 border-white bg-primary text-2xl text-white hover:bg-black">
+          <a
+            className="w-full text-center"
+            href="mailto:hannahjmccain@gmail.com">
+            send an email
+          </a>
+        </li>
+      </div>
+      <div className="items-end pb-2 text-xs">
         <p>
           This website uses the fonts{" "}
           <a
@@ -70,13 +79,6 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
           . Major thanks to the awesome open source foundries & non-Google free
           font resources out there !
         </p>
-      </div>
-      <div>
-        <li className="list-none bg-primary py-[.18rem] text-center text-[2rem] text-white hover:bg-black">
-          <a href="mailto:hannahjmccain@gmail.com">
-            &gt;&gt; say hi <span className="font-dingbats">J</span> &lt;&lt;
-          </a>
-        </li>
       </div>
     </main>
   );
