@@ -11,9 +11,10 @@ export type AllFile = {
 };
 
 const Index: React.FC<PageProps> = () => {
+  const [hovering, setHovering] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const ref = useRef<HTMLDivElement>(null);
-  useOutsideClick(ref, () => setSelected(null));
+  useOutsideClick(ref, () => setHovering(null));
   const { allFile } = useStaticQuery(graphql`
     query imageQuery {
       allFile {
@@ -36,7 +37,7 @@ const Index: React.FC<PageProps> = () => {
       const hovered = (e.target as HTMLButtonElement)?.id;
       console.log("hovered!");
 
-      setSelected(hovered);
+      setHovering(hovered);
     }
 
     biographyTable?.addEventListener("mouseover", handleHover);
@@ -53,31 +54,31 @@ const Index: React.FC<PageProps> = () => {
           top="15%"
           left="30%"
           imageData={findImage(allFile, "hannah")}
-          selfSelected={selected === "hannah"}
+          selfSelected={hovering === "hannah"}
         />
         <Image
           top="25%"
           left="45%"
           imageData={findImage(allFile, "writer")}
-          selfSelected={selected === "writer"}
+          selfSelected={hovering === "writer"}
         />
         <Image
           top="20%"
           left="40%"
           imageData={findImage(allFile, "coder3")}
-          selfSelected={selected === "coder3"}
+          selfSelected={hovering === "coder3"}
         />
         <Image
           top="30%"
           left="35%"
           imageData={findImage(allFile, "artist")}
-          selfSelected={selected === "artist"}
+          selfSelected={hovering === "artist"}
         />
         <Image
           top="50%"
           left="60%"
           imageData={findImage(allFile, "tucson")}
-          selfSelected={selected === "tucson"}
+          selfSelected={hovering === "tucson"}
         />
         <table
           id="bio-table"
@@ -86,57 +87,132 @@ const Index: React.FC<PageProps> = () => {
             <tr className="border-y border-black">
               <td
                 id="hannah"
+                onClick={() =>
+                  selected === "hannah"
+                    ? setSelected(null)
+                    : setSelected("hannah")
+                }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  selected === "hannah"
+                  hovering === "hannah"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 Hi, my name is Hannah !
               </td>
             </tr>
+            {selected === "hannah" && (
+              <tr>
+                <td
+                  className={classNames(
+                    "w-full py-4 pl-16 text-left text-2xl italic"
+                  )}>
+                  Nice to meet you :)
+                </td>
+              </tr>
+            )}
             <tr className="border-y border-black">
               <td
                 id="writer"
+                onClick={() =>
+                  selected === "writer"
+                    ? setSelected(null)
+                    : setSelected("writer")
+                }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  selected === "writer"
+                  hovering === "writer"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 I'm a writer,
               </td>
             </tr>
+            {selected === "writer" && (
+              <tr>
+                <td
+                  className={classNames(
+                    "w-full py-4 pl-16 text-left text-2xl italic"
+                  )}>
+                  I write mostly poetry, & I run a small indie poetry press
+                  called Pansy Press.
+                </td>
+              </tr>
+            )}
             <tr className="border-y border-black">
               <td
                 id="coder3"
+                onClick={() =>
+                  selected === "coder3"
+                    ? setSelected(null)
+                    : setSelected("coder3")
+                }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  selected === "coder3"
+                  hovering === "coder3"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 software developer,
               </td>
             </tr>
+            {selected === "coder3" && (
+              <tr>
+                <td
+                  className={classNames(
+                    "w-full py-4 pl-16 text-left text-2xl italic"
+                  )}>
+                  I'm a full stack developer with particular expertise in the
+                  front end. I have worked at startups & big companies; I've
+                  worked on enterprise-scale B2B applications and I've built
+                  small personal websites.
+                  <br />
+                  <br />
+                  Whether it's making your app idea a reality, building you an
+                  online portfolio, updating the SEO on your company's website,
+                  or something else — I'd love to help you on your next web
+                  development project!
+                </td>
+              </tr>
+            )}
             <tr className="border-y border-black">
               <td
                 id="artist"
+                onClick={() =>
+                  selected === "artist"
+                    ? setSelected(null)
+                    : setSelected("artist")
+                }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  selected === "artist"
+                  hovering === "artist"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 & artist
               </td>
             </tr>
+            {selected === "artist" && (
+              <tr>
+                <td
+                  className={classNames(
+                    "w-full py-4 pl-16 text-left text-2xl italic"
+                  )}>
+                  Get in touch if you would like to commission a portrait!
+                </td>
+              </tr>
+            )}
             <tr className="group w-full border-y border-black">
               <td
                 id="artist-2"
+                onClick={() =>
+                  selected === "artist-2"
+                    ? setSelected(null)
+                    : setSelected("artist-2")
+                }
                 className={classNames(
                   "w-full py-4 text-left italic transition-colors md:pl-12",
-                  selected === "artist-2"
+                  hovering === "artist-2"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
@@ -150,18 +226,45 @@ const Index: React.FC<PageProps> = () => {
                 </a>
               </td>
             </tr>
+            {selected === "artist-2" && (
+              <tr>
+                <td
+                  className={classNames(
+                    "w-full py-4 pl-16 text-left text-2xl italic"
+                  )}>
+                  Along with painting, I play in a band, do graphic design work,
+                  dabble in printmaking… And more. If it's creative, I probably
+                  do it already or will be trying it soon!
+                </td>
+              </tr>
+            )}
             <tr className="border-y border-black">
               <td
                 id="tucson"
+                onClick={() =>
+                  selected === "tucson"
+                    ? setSelected(null)
+                    : setSelected("tucson")
+                }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  selected === "tucson"
+                  hovering === "tucson"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 living in sunny Tucson, Arizona !
               </td>
             </tr>
+            {selected === "tucson" && (
+              <tr>
+                <td
+                  className={classNames(
+                    "w-full py-4 pl-16 text-left text-2xl italic"
+                  )}>
+                  But I'm from the beautiful state of Maine :)
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
