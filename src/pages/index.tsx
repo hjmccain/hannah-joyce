@@ -35,8 +35,6 @@ const Index: React.FC<PageProps> = () => {
 
     function handleHover(e: MouseEvent) {
       const hovered = (e.target as HTMLButtonElement)?.id;
-      console.log("hovered!");
-
       setHovering(hovered);
     }
 
@@ -54,31 +52,31 @@ const Index: React.FC<PageProps> = () => {
           top="15%"
           left="30%"
           imageData={findImage(allFile, "hannah")}
-          selfSelected={hovering === "hannah"}
+          selfSelected={hovering === "hannah" && selected !== "hannah"}
         />
         <Image
           top="25%"
           left="45%"
           imageData={findImage(allFile, "writer")}
-          selfSelected={hovering === "writer"}
+          selfSelected={hovering === "writer" && selected !== "writer"}
         />
         <Image
           top="20%"
           left="40%"
           imageData={findImage(allFile, "coder3")}
-          selfSelected={hovering === "coder3"}
+          selfSelected={hovering === "coder3" && selected !== "coder3"}
         />
         <Image
           top="30%"
           left="35%"
           imageData={findImage(allFile, "artist")}
-          selfSelected={hovering === "artist"}
+          selfSelected={hovering === "artist" && selected !== "artist"}
         />
         <Image
           top="50%"
           left="60%"
           imageData={findImage(allFile, "tucson")}
-          selfSelected={hovering === "tucson"}
+          selfSelected={hovering === "tucson" && selected !== "tucson"}
         />
         <table
           id="bio-table"
@@ -94,23 +92,21 @@ const Index: React.FC<PageProps> = () => {
                 }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  hovering === "hannah"
+                  hovering === "hannah" && selected !== "hannah"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 Hi, my name is Hannah !
+                {selected === "hannah" && (
+                  <div
+                    className={classNames(
+                      "w-full py-4 pl-16 text-left text-2xl italic"
+                    )}>
+                    Nice to meet you :)
+                  </div>
+                )}
               </td>
             </tr>
-            {selected === "hannah" && (
-              <tr>
-                <td
-                  className={classNames(
-                    "w-full py-4 pl-16 text-left text-2xl italic"
-                  )}>
-                  Nice to meet you :)
-                </td>
-              </tr>
-            )}
             <tr className="border-y border-black">
               <td
                 id="writer"
@@ -121,24 +117,29 @@ const Index: React.FC<PageProps> = () => {
                 }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  hovering === "writer"
+                  hovering === "writer" && selected !== "writer"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 I'm a writer,
+                {selected === "writer" && (
+                  <div
+                    className={classNames(
+                      "w-full py-4 pl-16 text-left text-2xl italic"
+                    )}>
+                    I write mostly poetry, & I run a small indie poetry press
+                    called Pansy Press.{" "}
+                    <a
+                      className="hover:underline"
+                      href="https://www.pansy.press"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      &gt;&gt; Check us out!
+                    </a>
+                  </div>
+                )}
               </td>
             </tr>
-            {selected === "writer" && (
-              <tr>
-                <td
-                  className={classNames(
-                    "w-full py-4 pl-16 text-left text-2xl italic"
-                  )}>
-                  I write mostly poetry, & I run a small indie poetry press
-                  called Pansy Press.
-                </td>
-              </tr>
-            )}
             <tr className="border-y border-black">
               <td
                 id="coder3"
@@ -149,32 +150,30 @@ const Index: React.FC<PageProps> = () => {
                 }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  hovering === "coder3"
+                  hovering === "coder3" && selected !== "coder3"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 software developer,
+                {selected === "coder3" && (
+                  <div
+                    className={classNames(
+                      "w-full py-4 pl-16 text-left text-2xl italic"
+                    )}>
+                    I'm a full stack developer with particular expertise in the
+                    front end. I have worked at startups & big companies; I've
+                    worked on enterprise-scale B2B applications and I've built
+                    small personal websites.
+                    <br />
+                    <br />
+                    Whether it's making your app idea a reality, building you an
+                    online portfolio, updating the SEO on your company's
+                    website, or something else — I'd love to help you on your
+                    next web development project &lt;3
+                  </div>
+                )}
               </td>
             </tr>
-            {selected === "coder3" && (
-              <tr>
-                <td
-                  className={classNames(
-                    "w-full py-4 pl-16 text-left text-2xl italic"
-                  )}>
-                  I'm a full stack developer with particular expertise in the
-                  front end. I have worked at startups & big companies; I've
-                  worked on enterprise-scale B2B applications and I've built
-                  small personal websites.
-                  <br />
-                  <br />
-                  Whether it's making your app idea a reality, building you an
-                  online portfolio, updating the SEO on your company's website,
-                  or something else — I'd love to help you on your next web
-                  development project!
-                </td>
-              </tr>
-            )}
             <tr className="border-y border-black">
               <td
                 id="artist"
@@ -185,23 +184,22 @@ const Index: React.FC<PageProps> = () => {
                 }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  hovering === "artist"
+                  hovering === "artist" && selected !== "artist"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 & artist
+                {selected === "artist" && (
+                  <div
+                    className={classNames(
+                      "w-full py-4 pl-16 text-left text-2xl italic"
+                    )}>
+                    Get in touch if you would like to commission a portrait!
+                  </div>
+                )}
               </td>
             </tr>
-            {selected === "artist" && (
-              <tr>
-                <td
-                  className={classNames(
-                    "w-full py-4 pl-16 text-left text-2xl italic"
-                  )}>
-                  Get in touch if you would like to commission a portrait!
-                </td>
-              </tr>
-            )}
+
             <tr className="group w-full border-y border-black">
               <td
                 id="artist-2"
@@ -212,32 +210,34 @@ const Index: React.FC<PageProps> = () => {
                 }
                 className={classNames(
                   "w-full py-4 text-left italic transition-colors md:pl-12",
-                  hovering === "artist-2"
+                  hovering === "artist-2" && selected !== "artist-2"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 (of many kinds)
                 <a
-                  className="ml-40 inline-block text-white opacity-0 hover:text-black hover:underline group-hover:opacity-100"
+                  className={classNames(
+                    selected === "artist-2"
+                      ? "grou text-black"
+                      : "text-white opacity-0 hover:text-black group-hover:opacity-100",
+                    "ml-40 inline-block hover:underline"
+                  )}
                   href="https://sonyabladeband.bandcamp.com/album/demo"
                   target="_blank"
                   rel="noopener noreferrer">
                   &gt;&gt; sonya blade
                 </a>
+                {selected === "artist-2" && (
+                  <div
+                    className={classNames(
+                      "w-full py-4 pl-16 text-left text-2xl italic"
+                    )}>
+                    Also, unrelated but also creative, I'd love to do graphic
+                    design work for you.
+                  </div>
+                )}
               </td>
             </tr>
-            {selected === "artist-2" && (
-              <tr>
-                <td
-                  className={classNames(
-                    "w-full py-4 pl-16 text-left text-2xl italic"
-                  )}>
-                  Along with painting, I play in a band, do graphic design work,
-                  dabble in printmaking… And more. If it's creative, I probably
-                  do it already or will be trying it soon!
-                </td>
-              </tr>
-            )}
             <tr className="border-y border-black">
               <td
                 id="tucson"
@@ -248,23 +248,21 @@ const Index: React.FC<PageProps> = () => {
                 }
                 className={classNames(
                   "w-full py-4 text-left transition-colors",
-                  hovering === "tucson"
+                  hovering === "tucson" && selected !== "tucson"
                     ? "bg-black text-white"
                     : "bg-secondary text-black"
                 )}>
                 living in sunny Tucson, Arizona !
+                {selected === "tucson" && (
+                  <div
+                    className={classNames(
+                      "w-full py-4 pl-16 text-left text-2xl italic"
+                    )}>
+                    But I'm from the beautiful state of Maine :)
+                  </div>
+                )}
               </td>
             </tr>
-            {selected === "tucson" && (
-              <tr>
-                <td
-                  className={classNames(
-                    "w-full py-4 pl-16 text-left text-2xl italic"
-                  )}>
-                  But I'm from the beautiful state of Maine :)
-                </td>
-              </tr>
-            )}
           </tbody>
         </table>
       </div>

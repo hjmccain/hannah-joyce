@@ -28,7 +28,7 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
           </span>
         </a>
         <a
-          href="https://github.com/hjmccain"
+          href="https://www.linkedin.com/in/hjmccain/"
           target="_blank"
           rel="noopener noreferrer"
           className={classNames(
@@ -36,7 +36,7 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
             "md:absolute md:ml-0 md:w-40 md:origin-[78px_78px] md:py-14 md:group-hover:w-[32rem] md:group-hover:-rotate-[32deg]"
           )}>
           <span className="ml-8 pl-52 text-xs uppercase transition-opacity delay-100 group-hover:text-4xl group-hover:opacity-100 md:opacity-0">
-            github
+            linkedin
           </span>
         </a>
         <a
