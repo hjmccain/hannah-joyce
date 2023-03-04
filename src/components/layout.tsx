@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from "react";
-import Nav from "./nav";
+import Nav, { MobileNav } from "./nav";
 import classNames from "classnames";
 import Marquee from "./marquee";
 import { navigate } from "gatsby";
@@ -15,6 +15,9 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
           "relative top-12 flex flex-row items-end md:left-10 md:z-40"
         )}>
         <Nav />
+        <div className="w-screen overflow-hidden">
+          <MobileNav />
+        </div>
       </div>
       <div
         className={classNames(
@@ -35,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
         )}>
         {children}
       </div>
-      <div className="mb-12 flex w-full justify-end pr-12">
+      <div className="mb-12 flex w-full justify-center pr-12">
         <li className="flex h-[150px] w-[150px] place-items-center rounded-full border-2 border-white bg-primary text-2xl text-white hover:bg-black">
           <a
             className="w-full text-center"

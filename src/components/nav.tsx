@@ -13,7 +13,6 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
         )}>
         links
       </a>
-      <MobileNav />
       <div className="hidden text-black md:mt-0 md:block md:opacity-0 group-hover:md:opacity-100">
         <a
           href="https://www.instagram.com/imaginary_hannah/"
@@ -56,7 +55,7 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
   );
 };
 
-const MobileNav = ({}: {}) => {
+export const MobileNav = ({}: {}) => {
   // return (
   //   <div className="mb-12 md:hidden">
   //     Sorry, the mobile version of this site currently kinda sucks, and maybe
