@@ -48,39 +48,41 @@ const Index: React.FC<PageProps> = () => {
   return (
     <Layout>
       <div ref={ref} className="mb-16 mt-40 flex flex-col items-center lg:mt-0">
-        <Image
-          top="15%"
-          left="30%"
-          imageData={findImage(allFile, "hannah")}
-          selfSelected={hovering === "hannah" && selected !== "hannah"}
-        />
-        <Image
-          top="25%"
-          left="45%"
-          imageData={findImage(allFile, "writer")}
-          selfSelected={hovering === "writer" && selected !== "writer"}
-        />
-        <Image
-          top="20%"
-          left="40%"
-          imageData={findImage(allFile, "coder3")}
-          selfSelected={hovering === "coder3" && selected !== "coder3"}
-        />
-        <Image
-          top="30%"
-          left="35%"
-          imageData={findImage(allFile, "artist")}
-          selfSelected={hovering === "artist" && selected !== "artist"}
-        />
-        <Image
-          top="50%"
-          left="60%"
-          imageData={findImage(allFile, "tucson")}
-          selfSelected={hovering === "tucson" && selected !== "tucson"}
-        />
+        <div className="hidden md:block">
+          <Image
+            top="15%"
+            left="30%"
+            imageData={findImage(allFile, "hannah")}
+            selfSelected={hovering === "hannah" && selected !== "hannah"}
+          />
+          <Image
+            top="25%"
+            left="45%"
+            imageData={findImage(allFile, "writer")}
+            selfSelected={hovering === "writer" && selected !== "writer"}
+          />
+          <Image
+            top="20%"
+            left="40%"
+            imageData={findImage(allFile, "coder3")}
+            selfSelected={hovering === "coder3" && selected !== "coder3"}
+          />
+          <Image
+            top="30%"
+            left="35%"
+            imageData={findImage(allFile, "artist")}
+            selfSelected={hovering === "artist" && selected !== "artist"}
+          />
+          <Image
+            top="50%"
+            left="60%"
+            imageData={findImage(allFile, "tucson")}
+            selfSelected={hovering === "tucson" && selected !== "tucson"}
+          />
+        </div>
         <table
           id="bio-table"
-          className="relative z-10 w-full cursor-pointer text-black md:text-4xl">
+          className="relative z-10 mt-[-100px] w-full cursor-pointer text-black sm:mt-auto md:text-4xl">
           <tbody>
             <tr className="border-y border-black">
               <td
@@ -100,7 +102,7 @@ const Index: React.FC<PageProps> = () => {
                 {selected === "hannah" && (
                   <div
                     className={classNames(
-                      "w-full py-4 pl-16 text-left text-2xl italic"
+                      "w-full py-4 pl-16 text-left italic md:text-2xl"
                     )}>
                     Nice to meet you :)
                   </div>
@@ -125,7 +127,7 @@ const Index: React.FC<PageProps> = () => {
                 {selected === "writer" && (
                   <div
                     className={classNames(
-                      "w-full py-4 pl-16 text-left text-2xl italic"
+                      "w-full py-4 pl-16 text-left italic md:text-2xl"
                     )}>
                     I write mostly poetry, & I run a small indie poetry press
                     called Pansy Press.{" "}
@@ -158,7 +160,7 @@ const Index: React.FC<PageProps> = () => {
                 {selected === "coder3" && (
                   <div
                     className={classNames(
-                      "w-full py-4 pl-16 text-left text-2xl italic"
+                      "w-full py-4 pl-16 text-left italic md:text-2xl"
                     )}>
                     I'm a full stack developer with particular expertise in the
                     front end. I have worked at startups & big companies; I've
@@ -192,7 +194,7 @@ const Index: React.FC<PageProps> = () => {
                 {selected === "artist" && (
                   <div
                     className={classNames(
-                      "w-full py-4 pl-16 text-left text-2xl italic"
+                      "w-full py-4 pl-16 text-left italic md:text-2xl"
                     )}>
                     Get in touch if you would like to commission a portrait!
                   </div>
@@ -230,7 +232,7 @@ const Index: React.FC<PageProps> = () => {
                 {selected === "artist-2" && (
                   <div
                     className={classNames(
-                      "w-full py-4 pl-16 text-left text-2xl italic"
+                      "w-full py-4 pl-16 text-left italic md:text-2xl"
                     )}>
                     Also, unrelated but also creative, I'd love to do graphic
                     design work for you.
@@ -256,7 +258,7 @@ const Index: React.FC<PageProps> = () => {
                 {selected === "tucson" && (
                   <div
                     className={classNames(
-                      "w-full py-4 pl-16 text-left text-2xl italic"
+                      "w-full py-4 pl-16 text-left italic md:text-2xl"
                     )}>
                     But I'm from the beautiful state of Maine :)
                   </div>

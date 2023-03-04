@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
         <div
           className={classNames(
             "h-40 w-full px-10 text-center font-display text-med text-primary",
-            "md:m-0 md:mb-12 md:w-auto md:text-bigger"
+            "md:mb-8 md:w-auto md:text-bigger"
           )}>
           <p>HANNAH</p>
           <p className="mt-[-3rem] md:mt-[-9rem]">JOYCE</p>

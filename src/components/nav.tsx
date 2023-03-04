@@ -57,87 +57,143 @@ const Nav: React.FC<NavProps> = ({}: NavProps) => {
 };
 
 const MobileNav = ({}: {}) => {
+  // return (
+  //   <div className="mb-12 md:hidden">
+  //     Sorry, the mobile version of this site currently kinda sucks, and maybe
+  //     always will. Find me on{" "}
+  //     <a
+  //       href="https://www.instagram.com/imaginary_hannah/"
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //       className={classNames()}>
+  //       <span className="hover:underline">instagram</span>
+  //     </a>{" "}
+  //     @imaginary_hannah… U know, that format is perfect for phones{" "}
+  //     <span className="font-dingbats">J</span> !!
+  //     <br />
+  //     <br />
+  //     For web development-related inquiries, you can find me on{" "}
+  //     <a
+  //       href="https://www.linkedin.com/in/hjmccain/"
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //       className={classNames()}>
+  //       <span className="hover:underline">linkedin</span>.
+  //     </a>
+  //   </div>
+  // );
   return (
-    <div className="mb-12 md:hidden">
-      Sorry, the mobile version of this site currently kinda sucks, and maybe
-      always will. Find me on{" "}
+    <div className="mb-10 block md:hidden">
       <a
         href="https://www.instagram.com/imaginary_hannah/"
         target="_blank"
         rel="noopener noreferrer"
-        className={classNames()}>
-        <span className="text-xs uppercase underline transition-opacity delay-100 hover:no-underline group-hover:text-4xl group-hover:opacity-100 md:opacity-0">
-          instagram
-        </span>
-      </a>{" "}
-      @imaginary_hannah… U know, that format is perfect for phones{" "}
-      <span className="font-dingbats">J</span> !!
+        className={classNames(
+          "marquee-small block w-full bg-primary text-white hover:bg-white hover:text-black"
+        )}>
+        <div
+          className="marquee-small__inner whitespace-nowrap"
+          aria-hidden="true">
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            INSTAGRAM<span className="font-dingbats">J</span>
+          </span>
+        </div>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/hjmccain/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classNames(
+          "marquee-small block w-full bg-primary text-white hover:bg-white hover:text-black"
+        )}>
+        <div
+          className="marquee-small__inner whitespace-nowrap"
+          aria-hidden="true">
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            LINKEDIN<span className="font-dingbats">J</span>
+          </span>
+        </div>
+      </a>
+      <a
+        href="https://www.are.na/hannah-mccain"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classNames(
+          "marquee-small block w-full bg-primary text-white hover:bg-white hover:text-black"
+        )}>
+        <div
+          className="marquee-small__inner whitespace-nowrap"
+          aria-hidden="true">
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+          <span>
+            ARE.NA<span className="font-dingbats">J</span>
+          </span>
+        </div>
+      </a>
     </div>
   );
-  // return (
-  //   <div className="mb-10 block md:hidden">
-  //     <button
-  //       onClick={() => null}
-  //       className={classNames("hover marquee-small block w-full bg-black")}>
-  //       <div
-  //         className="marquee-small__inner whitespace-nowrap"
-  //         aria-hidden="true">
-  //         <span>
-  //           PORTFOLIO<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           PORTFOLIO<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           PORTFOLIO<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           PORTFOLIO<span className="font-dingbats">J</span>
-  //         </span>
-  //       </div>
-  //     </button>
-  //     <button
-  //       onClick={() => null}
-  //       className={classNames("hover marquee-small block w-full bg-black")}>
-  //       <div
-  //         className="marquee-small__inner whitespace-nowrap"
-  //         aria-hidden="true">
-  //         <span>
-  //           ABOUT<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           ABOUT<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           ABOUT<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           ABOUT<span className="font-dingbats">J</span>
-  //         </span>
-  //       </div>
-  //     </button>
-  //     <button
-  //       onClick={() => null}
-  //       className={classNames("hover marquee-small block w-full bg-black")}>
-  //       <div
-  //         className="marquee-small__inner whitespace-nowrap"
-  //         aria-hidden="true">
-  //         <span>
-  //           CONTACT<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           CONTACT<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           CONTACT<span className="font-dingbats">J</span>
-  //         </span>
-  //         <span>
-  //           CONTACT<span className="font-dingbats">J</span>
-  //         </span>
-  //       </div>
-  //     </button>
-  //   </div>
-  // );
 };
 
 export default Nav;
